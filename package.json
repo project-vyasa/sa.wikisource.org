@@ -1,0 +1,31 @@
+{
+  "name": "@project-vyasa/sa-wikisource-org",
+  "version": "0.1.0",
+  "description": "Project Vyasa data pipeline and publication for Rig Veda from Sanskrit Wikisource (sa.wikisource.org)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "crawl:rv": "bun run src/crawl/index.ts",
+    "extract:rv": "bun run src/extract/index.ts",
+    "transform:rv": "bun run src/transform/index.ts",
+    "patch:rv": "bun run src/patch/index.ts",
+    "verify:rv": "bun run src/verify/index.ts",
+    "pipeline:rv": "bun run crawl:rv && bun run extract:rv && bun run transform:rv && bun run patch:rv && bun run verify:rv",
+    "extract:sample": "bun run src/extract/index.ts 1.1 1.185",
+    "build:rv": "vyasac pack data/processed/rigveda && vyasac publish data/processed/rigveda",
+    "build": "bun run build:rv",
+    "deploy": "gh-pages -d dist --dotfiles --nojekyll",
+    "transform:sample": "bun run src/transform/index.ts 1.1 1.185"
+  },
+  "dependencies": {
+    "@indic-transliteration/sanscript": "^1.2.9",
+    "cheerio": "^1.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.6",
+    "@types/node": "^22.0.0",
+    "gh-pages": "^6.3.0",
+    "typescript": "^5.5.4"
+  }
+}

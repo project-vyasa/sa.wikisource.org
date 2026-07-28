@@ -1,0 +1,19 @@
+[workspace]
+name = "rigveda"
+title = "ऋग्वेदः"
+description = "Rig Veda Samhita, Padapatha, and Sayanacharya Bhashya from Sanskrit Wikisource"
+
+[publish]
+publisher_dir = "../../../"
+
+[urn]
+path_schema = ["mandala", "sukta"]
+corpus = "rv"
+hierarchy = ["mandala", "sukta", "rik"]
+
+[build.default]
+
+[streams]
+primary = { path = "content/samhita" }
+padapatha = { path = "content/padapatha" }
+sayana = { path = "content/sayana" }

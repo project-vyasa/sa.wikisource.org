@@ -1,0 +1,12 @@
+[publisher]
+identifier = "sa_wikisource"
+title = "Sanskrit Wikisource (विकिस्रोतः)"
+url = "https://sa.wikisource.org"
+catalog_url = "https://project-vyasa.github.io/sa.wikisource.org/catalog.json"
+description = "Open-access Sanskrit texts from Wikimedia Wikisource, beginning with Rig Veda Samhita, Padapatha, and Sayanacharya Bhashya."
+
+[curation]
+maintainer = "Project Vyasa Core Team"
+license = "CC-BY-SA-4.0"
+source_type = "mediawiki"
+primary_corpus = "Rig Veda (ऋग्वेदः)"
