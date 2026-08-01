@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "source_id": "vmlt-firebase",
+  "snapshot_date": "2026-07-29",
+  "generated_at": "2026-07-29T06:55:31.679Z",
+  "patches": {
+    "2:22": {
+      "chandas": "अतिशक्वरी",
+      "source": {
+        "meters": "1st set of styles: aṣṭiḥ (1); nicṛdatiśakvarī (2); svarāṭśakvarī (3); bhurigatiśakvarī (4) 2nd set of styles: atiśakvarī (2-3); aṣṭi (1); atiśakvarī or aṣṭi (4)"
+      }
+    },
+    "5:44": {
+      "rishi": "अवत्सार काश्यप इत्येते",
+      "source": {
+        "from": "avatsāra kāśyapa and other"
+      }
+    },
+    "6:68": {
+      "rishi": "भरद्वाज बार्हस्पत्य",
+      "devata": "इन्द्र, वरुण",
+      "source": {
+        "from": "bharadvāja bārhaspatya",
+        "to": "indra, varuṇa"
+      }
+    },
+    "6:75": {
+      "devata": "१: वर्मन्; २: धनु; ३: ज्या; ४: आर्त्नी; ५: इषुधि; ६: सारथि, रष्मय; ७: अष्वास्; ८: रथ; ९: रथोपाः; १०: लिङ्गोक्तदेवतास्; ११, १२, १५, १६: इषवः; १३, १४: प्रतोदः; १७-१९: लिङ्गोक्तदेवतास्",
+      "source": {
+        "to": "1: varman; 2: dhanu; 3: jyā; 4: ārtnī; 5: iṣudhi; 6: sārathi, raṣmaya; 7: aṣvās; 8: ratha; 9: rathopāḥ; 10: liṅgoktadevatās; 11, 12, 15, 16: iṣavaḥ; 13, 14: pratodaḥ; 17-19: liṅgoktadevatās who help in battle"
+      }
+    },
+    "7:32": {
+      "rishi": "१-२५, २७: वसिष्ठ मैत्रावरुणि; २६: शक्ति वासिष्ठ (अ); वसिष्ठ मैत्रावरुणि वा शक्ति वासिष्ठ (ब्)",
+      "source": {
+        "from": "1-25, 27: vasiṣṭha maitrāvaruṇi; 26: śakti vāsiṣṭha (a); vasiṣṭha maitrāvaruṇi or śakti vāsiṣṭha (b)"
+      }
+    },
+    "8:1": {
+      "rishi": "१, २: प्रगाथ काण्व (पूर्वम् प्रगाथ घौर, भ्राता दत्तपुत्रश्च कण्व); ३-२९: मेधातिथि काण्व; मेध्यातिथि काण्व; ३०-३३: आसङ्ग प्लायोगि; ३४: शश्वती आङ्गिरसी",
+      "source": {
+        "from": "1, 2: pragātha kāṇva (formerly pragātha ghaura, brother and adoptive son of kaṇva); 3-29: medhātithi kāṇva; medhyātithi kāṇva; 30-33: āsaṅga plāyogi; 34: śaśvatī āṅgirasī"
+      }
+    },
+    "8:102": {
+      "rishi": "प्रयोग भार्गव वा अग्नि पावक बार्हस्पत्य वा अग्नि गृहपति सहसः सूनु अग्नि यविष्ठ सहसः सूनु (वा)",
+      "source": {
+        "from": "prayoga bhārgava or agni pāvaka bārhaspatya or agni gṛhapati sahasaḥ sūnu and agni yaviṣṭha sahasaḥ sūnu (last two together or one of them)"
+      }
+    },
+    "9:86": {
+      "rishi": "१-१०: अकृष्टास् (इत्यपरनाम माषा ऋषयः); ११-२०: सिकतास् (इत्यपरनाम निवावरी ऋषयः); २१-३०: पृष्णिस् (इत्यपरनाम अजा ऋषयः); ३१-४०: अत्रयस्; ४१-४५: अत्रि भौम; ४६-४८: गृत्समद भार्गव शौनक",
+      "source": {
+        "from": "1-10: akṛṣṭās (alias of māṣā sages); 11-20: sikatās (alias of the nivāvarī sages); 21-30: pṛṣṇis (alias of the ajā sages); 31-40: atrayas; 41-45: atri bhauma; 46-48: gṛtsamada bhārgava śaunaka"
+      }
+    },
+    "9:97": {
+      "rishi": "१-३: वसिष्ठ मैत्रावरुणि; ४-६: इन्द्रप्रमति वासिष्ठ; ७-९: वृषगण वासिष्ठ; १०-१२: मन्यु वासिष्ठ; १३-१५: उपमन्यु वासिष्ठ; १६-१८: व्याघ्रपाद् वासिष्ठ; १९-२१: शक्ति वासिष्ठ; २२-२४: कर्णश्रुत् वासिष्ठ; २५-२७: मृऴीक वासिष्ठ; २८-३०: वसुक्र वासिष्ठ; ३१-४४: पराशर शाक्त्य; ४५-५८: कुत्स आङ्गिरस",
+      "source": {
+        "from": "1-3: vasiṣṭha maitrāvaruṇi; 4-6: indrapramati vāsiṣṭha; 7-9: vṛṣagaṇa vāsiṣṭha; 10-12: manyu vāsiṣṭha; 13-15: upamanyu vāsiṣṭha; 16-18: vyāghrapād vāsiṣṭha; 19-21: śakti vāsiṣṭha; 22-24: karṇaśrut vāsiṣṭha; 25-27: mṛḻīka vāsiṣṭha; 28-30: vasukra vāsiṣṭha; 31-44: parāśara śāktya; 45-58: kutsa āṅgirasa"
+      }
+    },
+    "9:107": {
+      "rishi": "सप्त ऋषयः",
+      "source": {
+        "from": "sapta ṛṣayaḥ"
+      }
+    },
+    "9:108": {
+      "rishi": "१, २: गौरिवीति शाक्त्य; ३, १४-१६: शक्ति वासिष्ठ; ४, ५: ऊरु आङ्गिरस; ६, ७: ऋजिश्वन् भारद्वाज; ८, ९: ऊर्ध्वसद्मन् आङ्गिरस; १०, ११: कृतयशस् आङ्गिरस; १२, १३: ऋणंचय",
+      "source": {
+        "from": "1, 2: gaurivīti śāktya; 3, 14-16: śakti vāsiṣṭha; 4, 5: ūru āṅgirasa; 6, 7: ṛjiśvan bhāradvāja; 8, 9: ūrdhvasadman āṅgirasa; 10, 11: kṛtayaśas āṅgirasa; 12, 13: ṛṇaṃcaya"
+      }
+    },
+    "10:10": {
+      "rishi": "१, ३, ५-७, ११, १३: यमी वैवस्वती; २, ४, ८-१०, १२, १४: यम वैवस्वत",
+      "source": {
+        "from": "1, 3, 5-7, 11, 13: yamī vaivasvatī; 2, 4, 8-10, 12, 14: yama vaivasvata"
+      }
+    },
+    "10:28": {
+      "rishi": "१: वसुक्र ऐन्द्रस् पत्नी; २, ६, ८, १०, १२: इन्द्र; ३-५, ७, ९, ११: वसुक्र ऐन्द्र",
+      "source": {
+        "from": "1: vasukra aindra’s wife; 2, 6, 8, 10, 12: indra; 3-5, 7, 9, 11: vasukra aindra"
+      }
+    },
+    "10:71": {
+      "devata": "१: बृहस्पति, वाच्; २-४, ६, ९: वाच्; ५, ७, ८, १०, ११: ज्ञानम्",
+      "source": {
+        "to": "1: bṛhaspati, vāc; 2-4, 6, 9: vāc; 5, 7, 8, 10, 11: jñānam"
+      }
+    },
+    "10:81": {
+      "devata": "विश्वकर्मन्",
+      "chandas": "त्रिष्टुभ्",
+      "source": {
+        "to": "viśvakarman",
+        "meters": "1st set of styles: nicṛttriṣṭup (1, 6); bhuriktriṣṭup (3, 7); pādanicṛttriṣṭup (2); svarāṭtriṣṭup (4); triṣṭup (5) 2nd set of styles: triṣṭubh"
+      }
+    },
+    "10:91": {
+      "devata": "अग्नि",
+      "source": {
+        "to": "agni"
+      }
+    },
+    "10:111": {
+      "devata": "इन्द्र",
+      "chandas": "त्रिष्टुभ्",
+      "source": {
+        "to": "indra",
+        "meters": "1st set of styles: triṣṭup (1, 2, 4); virāṭtrisṭup (3, 6, 10); nicṛttriṣṭup (5, 7, 9); pādanicṛttriṣṭup (8) 2nd set of styles: triṣṭubh"
+      }
+    },
+    "10:121": {
+      "devata": "क (कः?)",
+      "chandas": "त्रिष्टुभ्",
+      "source": {
+        "to": "ka (who?)",
+        "meters": "1st set of styles: triṣṭup (1, 3, 6, 8, 9); nicṛttriṣṭup (2, 5); virāṭtrisṭup (4, 10); svarāṭtriṣṭup (7) 2nd set of styles: triṣṭubh"
+      }
+    },
+    "10:136": {
+      "rishi": "१: जूति वातरशन (अन्यतमः); २: वातजूति वातरशन (अन्यतमः); ३: विप्रजूत वातरशन (अन्यतमः); ४: वृषाणक वातरशन (अन्यतमः); ५: करिक्रत वातरशन (अन्यतमः); ६: एतश वातरशन (अन्यतमः); ७: ऋश्यशृङ्ग वातरशन (अन्यतमः)",
+      "source": {
+        "from": "1: jūti vātaraśana (one of vātaraśana’s seven sons); 2: vātajūti vātaraśana (one of vātaraśana’s seven sons); 3: viprajūta vātaraśana (one of vātaraśana’s seven sons); 4: vṛṣāṇaka vātaraśana (one of vātaraśana’s seven sons); 5: karikrata vātaraśana (one of vātaraśana’s seven sons); 6: etaśa vātaraśana (one of vātaraśana’s seven sons); 7: ṛśyaśṛṅga vātaraśana (one of vātaraśana’s seven sons)"
+      }
+    },
+    "10:141": {
+      "devata": "विश्वेदेवास्",
+      "chandas": "अनुष्टुभ्",
+      "source": {
+        "to": "viśvedevās",
+        "meters": "1st set of styles: nicṛdanuṣṭup (1, 2); virāḍanuṣṭup (3, 6); anuṣṭup (4, 5) 2nd set of styles: anuṣṭubh"
+      }
+    },
+    "10:151": {
+      "devata": "श्रद्धा",
+      "chandas": "अनुष्टुभ्",
+      "source": {
+        "to": "śraddhā",
+        "meters": "1st set of styles: anuṣṭup (1, 4, 5); virāḍanuṣṭup (2); nicṛdanuṣṭup (3) 2nd set of styles: anuṣṭubh"
+      }
+    },
+    "10:161": {
+      "devata": "राजयक्ष्मघ्नम्",
+      "source": {
+        "to": "rājayakṣmaghnam"
+      }
+    },
+    "10:171": {
+      "devata": "इन्द्र",
+      "source": {
+        "to": "indra"
+      }
+    },
+    "10:181": {
+      "devata": "विश्वेदेवास्",
+      "chandas": "त्रिष्टुभ्",
+      "source": {
+        "to": "viśvedevās",
+        "meters": "1st set of styles: nicṛttriṣṭup (1); triṣṭup (2); pādanicṛttriṣṭup (3) 2nd set of styles: triṣṭubh"
+      }
+    },
+    "10:191": {
+      "devata": "१: अग्नि; २-४: सञ्ज्ञानम्",
+      "source": {
+        "to": "1: agni; 2-4: sañjñānam"
+      }
+    }
+  }
+}

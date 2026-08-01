@@ -52,27 +52,13 @@ function suktaDisplayId(mandala: string, sukta: string): string {
 
 function emitContext(sukta: ExtractedSukta): string {
   const display = suktaDisplayId(sukta.mandala, sukta.sukta);
+  // Anukramani (rishi/devata/chandas) is applied by enrich:rv from VMLT — not Wikisource HTML.
   const fields: string[] = [
     `mandala = "${sukta.mandala}"`,
     `sukta = "${sukta.sukta}"`,
     `mandala.title = "Mandala ${Number.parseInt(sukta.mandala, 10)}"`,
     `sukta.title = "Sukta ${display}"`,
   ];
-  if (sukta.anukramani.rishi) {
-    fields.push(
-      `sukta.rishi = "${escapeAttr(sukta.anukramani.rishi)}"`,
-    );
-  }
-  if (sukta.anukramani.chandas) {
-    fields.push(
-      `sukta.chandas = "${escapeAttr(sukta.anukramani.chandas)}"`,
-    );
-  }
-  if (sukta.anukramani.devata) {
-    fields.push(
-      `sukta.devata = "${escapeAttr(sukta.anukramani.devata)}"`,
-    );
-  }
   const body = fields.map((f, i) => {
     const comma = i < fields.length - 1 ? "," : "";
     return `  ${f}${comma}`;

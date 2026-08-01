@@ -7,6 +7,8 @@
 `command-def { name="padapatha" category="content" }
 `command-def { name="bhashya" whitespace="preserve" category="content" }
 
+`command-def { name="annotate" category="metadata" flexible_args="true" }
+
 `set settings {
   whitespace = "preserve",
   break_after = "।॥"

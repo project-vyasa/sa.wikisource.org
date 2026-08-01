@@ -106,10 +106,11 @@ Graph queries layer on SQL: CTE over `graph_edges` → join `html_blocks` on `se
 
 ## 6. Implementation sequence
 
-1. **Now** — Keep `sukta.*` attributes (explorer titles, basic facets, book view).
-2. **Next** — Transform (or patch step) emits `annotations/anukramani.vy` + entity keys in `vocabulary/entities.vy`.
-3. **Viewer** — Entity lens in explorer via graph CTEs (parallel to structural grid).
-4. **Later** — Rik-level overrides, compound devatās, external entity URIs (Wikidata, cross-publisher).
+1. **Done** — `enrich:rv` emits `annotations/anukramani/` + `vocabulary/{entities,meters}.vy` from VMLT snapshot (see [enrich-rv.md](./enrich-rv.md)).
+2. **Done** — Transform no longer writes Wikisource `sukta.rishi` / `sukta.devata` / `sukta.chandas` into content context.
+3. **Later** — Generic viewer facet ingestion from graph `annotate` edges (not publication-specific hooks in `vyasa-apps`).
+4. **Now** — Uniform suktas: denormalized `sukta.*` display labels in content context (reading template).
+5. **Later** — Mixed-sukta reading view via graph-aware weave; leaf `block_attributes` at pack; entity authority crosswalk.
 
 ---
 
@@ -251,9 +252,11 @@ Emit only when extracted data differs from sukta default.
 
 ---
 
-## 9. Transform emission (sketch)
+## 9. Transform emission (implemented as `enrich:rv`)
 
-Pseudocode for a future `emitAnukramaniAnnotations(sukta)`:
+Implemented in `src/enrich/` — not in transform. See [enrich-rv.md](./enrich-rv.md).
+
+Pseudocode (matches production):
 
 ```typescript
 function entityKey(raw: string, registry: Map<string, string>): string {
@@ -273,7 +276,7 @@ function emitAnukramaniBlock(sukta: ExtractedSukta): string {
 }
 ```
 
-Keep **parallel** `sukta.rishi` etc. in content `set context` for block_attributes until viewer reads graph-only facets.
+Keep **parallel** `sukta.*` display labels in content `set context` for **uniform suktas only** (reading template / block_attributes denorm). Mixed suktas use graph edges for explorer facets.
 
 ---
 
@@ -319,7 +322,16 @@ Exact edge labels depend on chosen annotation pattern (§8.2 vs §8.3); adjust C
 
 | Concern | Approach |
 | :--- | :--- |
-| Explorer titles / quick facets | `sukta.*` → `block_attributes` (current) |
-| Semantic search / entity explorer | `annotations/` + `vocabulary/entities.vy` → graph |
-| BG parity | Event + `ANCHOR` pattern optional; `annotate` attributes sufficient for v1 |
-| Sequencing | Attributes now → generated annotations → viewer entity lens → rik overrides |
+| Explorer facets / entity queries | `annotations/anukramani/` → graph (`enrich:rv`) |
+| Reading template (uniform suktas) | `sukta.*` in content context (temporary denorm) → graph + vocabulary when weave is graph-aware |
+| Wikisource anukramani cells | Extract only; not used for facets after enrich |
+| Container titles / structure | `block_attributes` from `set context` (long-term) |
+| BG parity | `annotate` attribute edges (Pattern B, §8.3) |
+| Sequencing | extract → transform → **enrich** → verify → pack |
+
+### block_attributes vs graph (see also [enrich-rv.md](./enrich-rv.md) § block_attributes vs graph)
+
+- **Graph** — canonical for leaf-level anukramani (entity key → rik URN).
+- **block_attributes** — container display props (`title`, `sukta.title`); optional temporary denorm of uniform sukta anukramani for weave until `vyasav` resolves graph per leaf.
+- **Vocabulary** — entity keys → Devanagari labels; `facets.vy` → facet type names (देवता, ऋषि).
+- **Do not** treat duplicated anukramani in `block_attributes` as long-term architecture.

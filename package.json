@@ -8,14 +8,18 @@
     "crawl:rv": "bun run src/crawl/index.ts",
     "extract:rv": "bun run src/extract/index.ts",
     "transform:rv": "bun run src/transform/index.ts",
+    "enrich:rv": "bun run src/enrich/index.ts",
     "patch:rv": "bun run src/patch/index.ts",
     "verify:rv": "bun run src/verify/index.ts",
-    "pipeline:rv": "bun run crawl:rv && bun run extract:rv && bun run transform:rv && bun run patch:rv && bun run verify:rv",
+    "triangulate:rv": "bun run src/triangulate/index.ts",
+    "pipeline:rv": "bun run crawl:rv && bun run extract:rv && bun run transform:rv && bun run enrich:rv && bun run verify:rv",
     "extract:sample": "bun run src/extract/index.ts 1.1 1.185",
     "build:rv": "vyasac pack data/processed/rigveda && vyasac publish data/processed/rigveda",
     "build": "bun run build:rv",
     "deploy": "gh-pages -d dist --dotfiles --nojekyll",
-    "transform:sample": "bun run src/transform/index.ts 1.1 1.185"
+    "transform:sample": "bun run src/transform/index.ts 1.1 1.185",
+    "test": "bun test src/lib",
+    "audit:facet-noise": "bun run scripts/audit-facet-noise.ts"
   },
   "dependencies": {
     "@indic-transliteration/sanscript": "^1.2.9",

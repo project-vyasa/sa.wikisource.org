@@ -34,5 +34,6 @@ These are useful for source-gap triage and patch follow-up.
 - Rik count consistency across streams
 - Stripped-accent vs Wikisource unaccented (sandhi QA)
 - Syllable / meter checks (chandas from anukramani)
+- Anukramani triangulation vs reference index — see [anukramani-audit.md](./anukramani-audit.md)
 
 Implementation: [`src/verify/index.ts`](../src/verify/index.ts).

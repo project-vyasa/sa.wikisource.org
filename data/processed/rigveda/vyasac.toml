@@ -12,8 +12,10 @@ corpus = "rv"
 hierarchy = ["mandala", "sukta", "rik"]
 
 [build.default]
+layout = "sequence"
+target = "view"
 
 [streams]
-primary = { path = "content/samhita" }
-padapatha = { path = "content/padapatha" }
-sayana = { path = "content/sayana" }
+primary = { path = "content/samhita", segment_separator = "\n" }
+padapatha = { path = "content/padapatha", segment_separator = " " }
+sayana = { path = "content/sayana", segment_separator = "\n" }

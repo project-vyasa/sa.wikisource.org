@@ -53,7 +53,8 @@ A linguistic and metrical utility toolkit for Vedic Sanskrit:
 
 ### C. `@project-vyasa/cli`
 A centralized CLI engine that orchestrates pipeline stages 4 and 5 across all publisher repositories:
-* **`vyasa patch` (Stage 4 - 3-Way Merge):**
+* **Stage 4 enrich (this repo):** `bun run enrich:rv` writes VMLT-sourced `annotations/anukramani/` and `vocabulary/{entities,meters}.vy` into the Vyasa workspace (see `notes/enrich-rv.md`). Legacy `patch:rv` / `data/patches/` is deprecated.
+* **`vyasa patch` (future shared CLI - 3-Way Merge):**
   * Reads the clean base text from `vyasa-workspace/`.
   * Loads human or agent-generated semantic annotation patches (e.g., entity definitions, local URN linkings, grammatical tags) from `data/patches/`.
   * Executes a deterministic 3-way merge to apply enrichments without corrupting the base text extracted from the host.

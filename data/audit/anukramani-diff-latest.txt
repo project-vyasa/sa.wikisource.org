@@ -1,0 +1,220 @@
+Rig Veda — Anukramani triangulation audit
+Generated: 2026-07-29T06:29:52.579Z
+Extract: /Users/anand/Projects/project-vyasa/sa.wikisource.org/data/extracted/rigveda
+Reference: /Users/anand/Projects/project-vyasa/reference-snapshot-001/snapshots/vmlt-firebase/rigveda/2026-07-29
+Suktas audited: 1028
+
+=== Local extract gaps ===
+missing rishi: 12
+  5:44
+  6:68
+  7:32
+  8:1
+  8:102
+  9:86
+  9:97
+  9:107
+  9:108
+  10:10
+  10:28
+  10:136
+
+missing devata: 13
+  6:68
+  6:75
+  10:71
+  10:81
+  10:91
+  10:111
+  10:121
+  10:141
+  10:151
+  10:161
+  10:171
+  10:181
+  10:191
+
+missing chandas: 7
+  2:22
+  10:81
+  10:111
+  10:121
+  10:141
+  10:151
+  10:181
+
+garbage / non-canonical chandas: 0
+
+=== Rishi normalization splits (same key, multiple spellings) ===
+groups: 106
+  [100] मैत्रावरुणिर्वसिष्ठः → 7:1, 7:2, 7:3, 7:4, 7:5…
+  [57] बार्हस्पत्यो भरद्वाजः → 6:1, 6:2, 6:3, 6:4, 6:5…
+  [48] वामदेवो गौतमः → 4:1, 4:2, 4:3, 4:4, 4:5…
+  [40] गाथिनो विश्वामित्रः → 3:1, 3:2, 3:3, 3:4, 3:5…
+  [36] गृत्समद (आङ्गिरसः शौनहोत्रः पश्चाद्) भार्गवः शौनकः → 2:1, 2:2, 2:3, 2:8, 2:9…
+  [25] दीर्घतमा औचथ्यः → 1:140, 1:141, 1:142, 1:143, 1:144…
+  [24] अगस्त्यो मैत्रावरुणिः → 1:166, 1:167, 1:168, 1:169, 1:171…
+  [21] कश्यपोऽसितो देवलो वा → 9:5, 9:6, 9:7, 9:8, 9:9…
+  [20] गोतमो राहूगणः → 1:74, 1:75, 1:76, 1:77, 1:78…
+  [19] कुत्स आङ्गिरसः → 1:94, 1:95, 1:96, 1:97, 1:98…
+  [15] श्यावाश्व आत्रेयः → 5:53, 5:54, 5:55, 5:56, 5:57…
+  [14] मेधातिथिः काण्वः → 1:12, 1:13, 1:14, 1:15, 1:16…
+  [13] परुच्छेपो दैवोदासिः → 1:127, 1:128, 1:129, 1:130, 1:131…
+  [12] भौमोऽत्रिः → 5:37, 5:38, 5:39, 5:40, 5:41…
+  [11] मधुच्छन्दा वैश्वामित्रः → 1:1, 1:2, 1:3, 1:4, 1:5…
+  [11] त्रित आप्त्यः → 8:47, 9:33, 9:34, 9:102, 10:1…
+  [10] कक्षीवान् दैर्घतमस औशिजः → 1:116, 1:117, 1:118, 1:119, 1:120…
+  [9] कण्वो घौरः → 1:36, 1:37, 1:38, 1:39, 1:40…
+  [9] प्रस्कण्वः काण्वः → 1:44, 1:45, 1:46, 1:47, 1:48…
+  [9] नोधा गौतमः → 1:58, 1:59, 1:60, 1:61, 1:62…
+  [9] पराशरः शाक्त्यः → 1:65, 1:66, 1:67, 1:68, 1:69…
+  [8] कविर्भार्गवः → 9:47, 9:48, 9:49, 9:75, 9:76…
+  [8] अवत्सारः काश्यपः → 9:53, 9:54, 9:55, 9:56, 9:57…
+  [7] हिरण्यस्तूप आङ्गिरसः → 1:31, 1:32, 1:33, 1:34, 1:35…
+  [7] सव्य आङ्गिरसः → 1:51, 1:52, 1:53, 1:54, 1:55…
+  [6] आजीगर्तिः शुनःशेपः स कृत्रिमो वैश्वामित्रो देवरातः → 1:24, 1:25, 1:27, 1:28, 1:29…
+  [5] अयास्य आङ्गिरसः → 9:44, 9:45, 9:46, 10:67, 10:68
+  [4] सोमाहुतिर्भार्गवः → 2:4, 2:5, 2:6, 2:7
+  [4] गाथी कौशिकः → 3:19, 3:20, 3:21, 3:22
+  [4] वामदेवो गौतमः  → 4:28, 4:36, 4:38, 4:48
+  … and 76 more groups
+
+=== VMLT reference cross-check ===
+snapshot missing: 0
+  (none)
+
+rishi matched vs info.from: 425
+rishi mismatch vs info.from: 591
+  1:11  ours=जेता माधुच्छन्दसः (jetā mādhucchandasaḥ)  ref=jetṛ mādhucchandasa
+  1:36  ours=कण्वो घौरः (kaṇvo ghauraḥ)  ref=kaṇva ghaura
+  1:37  ours=कण्वो घौरः (kaṇvo ghauraḥ)  ref=kaṇva ghaura
+  1:38  ours=कण्वो घौरः (kaṇvo ghauraḥ)  ref=kaṇva ghaura
+  1:39  ours=कण्वो घौरः। (kaṇvo ghauraḥ|)  ref=kaṇva ghaura
+  1:40  ours=कण्वो घौरः (kaṇvo ghauraḥ)  ref=kaṇva ghaura
+  1:41  ours=कण्वो घौरः (kaṇvo ghauraḥ)  ref=kaṇva ghaura
+  1:42  ours=कण्वो घौरः (kaṇvo ghauraḥ)  ref=kaṇva ghaura
+  1:43  ours=कण्वो घौरः (kaṇvo ghauraḥ)  ref=kaṇva ghaura
+  1:74  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:75  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:76  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:77  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:78  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:79  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:80  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:81  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:82  ours=गोतमो राहूगणः* (gotamo rāhūgaṇaḥ*)  ref=gotama rāhūgaṇa
+  1:83  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:84  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:85  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:86  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:87  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:88  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:89  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:90  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:91  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:92  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:93  ours=गोतमो राहूगणः (gotamo rāhūgaṇaḥ)  ref=gotama rāhūgaṇa
+  1:99  ours=वार्षागिराः ऋज्राश्वाऽम्बरीष-सहदेव-भयमान-सुराधसः (vārṣāgirāḥ ṛjrāśvā'mbarīṣa-sahadeva-bhayamāna-surādhasaḥ)  ref=kaśyapa mārīca
+  1:105  ours=त्रित आप्त्यः, कुत्स आङ्गिरसो वा (trita āptyaḥ, kutsa āṅgiraso vā)  ref=kutsa āṅgirasa or trita āptya
+  1:116  ours=कक्षीवान् दैर्घतमस औशिजः (kakṣīvān dairghatamasa auśijaḥ)  ref=kakṣīvat dairghatamasa
+  1:117  ours=कक्षीवान् दैर्घतमस औशिजः (kakṣīvān dairghatamasa auśijaḥ)  ref=kakṣīvat dairghatamasa
+  1:118  ours=कक्षीवान् दैर्घतमस औशिजः (kakṣīvān dairghatamasa auśijaḥ)  ref=kakṣīvat dairghatamasa
+  1:119  ours=कक्षीवान् दैर्घतमस औशिजः (kakṣīvān dairghatamasa auśijaḥ)  ref=kakṣīvat dairghatamasa
+  1:120  ours=कक्षीवान् दैर्घतमस औशिजः। (kakṣīvān dairghatamasa auśijaḥ|)  ref=kakṣīvat dairghatamasa
+  1:121  ours=कक्षीवान् दैर्घतमस औशिजः (kakṣīvān dairghatamasa auśijaḥ)  ref=kakṣīvat dairghatamasa
+  1:122  ours=कक्षीवान् दैर्घतमस औशिजः। (kakṣīvān dairghatamasa auśijaḥ|)  ref=kakṣīvat dairghatamasa
+  1:123  ours=कक्षीवान् दैर्घतमस औशिजः (kakṣīvān dairghatamasa auśijaḥ)  ref=kakṣīvat dairghatamasa
+  1:124  ours=कक्षीवान् दैर्घतमस औशिजः (kakṣīvān dairghatamasa auśijaḥ)  ref=kakṣīvat dairghatamasa
+  … and 551 more
+
+devata matched vs info.to: 879
+devata mismatch vs info.to: 136
+  1:17  ours=इन्द्रावरुणौ (indrāvaruṇau)  ref=indra, varuṇa
+  1:19  ours=अग्निर्मरुतश्च (agnirmarutaśca)  ref=agni, maruts
+  1:20  ours=इन्द्राग्नी (indrāgnī)  ref=ṛbhus
+  1:21  ours=इन्द्राग्नी (indrāgnī)  ref=agni, indra
+  1:26  ours=अग्निः (agniḥ)  ref=1-3, 5-10: agni; 4: aryaman, mitra, varuṇa
+  1:39  ours=ब्रह्मणस्पतिः (brahmaṇaspatiḥ)  ref=maruts
+  1:59  ours=अग्निर्वैश्वानरः (agnirvaiśvānaraḥ)  ref=agni vaiśvānara
+  1:90  ours=विश्वेदेवाः (viśvedevāḥ)  ref=1: aryaman, mitra, varuṇa, viśvedevās; 2, 3, 6, 8: viśvedevās; 4: pūṣan, bhaga, maruts, viśvedevās; 5: pūṣan, viśvedevās, viṣṇu; 7: divaḥ, viśvedevās; 9: aryaman, indra, bṛhaspati, varuṇa, viśvedevās, viṣṇu
+  1:93  ours=अग्नीषोमौ (agnīṣomau)  ref=agni, soma
+  1:95  ours=अग्निः, औषसोऽग्निर्वा (agniḥ, auṣaso'gnirvā)  ref=agni, or the fire at dawn
+  1:96  ours=अग्निः, द्रविणोदा अग्निर्वा (agniḥ, draviṇodā agnirvā)  ref=agni, or the bountiful fire
+  1:98  ours=अग्निः, वैश्वानरोऽग्निर्वा (agniḥ, vaiśvānaro'gnirvā)  ref=agni vaiśvānara
+  1:99  ours=इन्द्रः (indraḥ)  ref=agni jātavedas
+  1:105  ours=विश्वे देवाः (viśve devāḥ)  ref=1-14, 16-19: viśvedevās; 15: varuṇa, viśvedevās
+  1:108  ours=इन्द्राग्नी (indrāgnī)  ref=agni, indra
+  1:109  ours=इन्द्राग्नी (indrāgnī)  ref=agni, indra
+  1:110  ours=ऋभवः (ṛbhavaḥ)  ref=ṛbhus
+  1:111  ours=ऋभवः (ṛbhavaḥ)  ref=ṛbhus
+  1:121  ours=इन्द्रो विश्वे देवा वा (indro viśve devā vā)  ref=indra or viśvedevās
+  1:137  ours=मित्रावरुणौ (mitrāvaruṇau)  ref=mitra, varuṇa
+  1:152  ours=मित्रावरुणौ (mitrāvaruṇau)  ref=mitra, varuṇa
+  1:153  ours=मित्रावरुणौ (mitrāvaruṇau)  ref=mitra, varuṇa
+  1:159  ours=द्यावापृथिवी (dyāvāpṛthivī)  ref=divaḥ, pṛthivī
+  1:160  ours=द्यावापृथिवी (dyāvāpṛthivī)  ref=divaḥ, pṛthivī
+  1:161  ours=ऋभवः (ṛbhavaḥ)  ref=ṛbhus
+  1:165  ours=मरुत्वानिन्द्रः (marutvānindraḥ)  ref=1, 2, 6, 8, 10-15: maruts; 3-5, 7, 9: indra
+  1:170  ours=इन्द्रः (indraḥ)  ref=1, 3: agastya; 2, 4, 5: indra
+  1:179  ours=रतिः (ratiḥ)  ref=1, 2, 4: agastya; 3, 5, 6: lopamudrā
+  1:185  ours=द्यावापृथिव्यौ (dyāvāpṛthivyau)  ref=divaḥ, pṛthivī
+  1:186  ours=विश्वे देवाः (viśve devāḥ)  ref=1: viśvedevās, savitṛ; 2: aryaman, mitra, varuṇa, viśvedevās; 3: agni, varuṇa, viśvedevās; 4: uṣas, night, viśvedevās; 5-11: viśvedevās
+  1:187  ours=अन्नं (annaṃ)  ref=pitu
+  1:191  ours=अप्तृणसूर्याः (विषघ्नोपनिषद्) (aptṛṇasūryāḥ (viṣaghnopaniṣad))  ref=aboṣadhisūryāḥ
+  2:27  ours=आदित्याः (ādityāḥ)  ref=1-9, 11-16: ādityās; 10, 17: ādityās, varuṇa
+  2:29  ours=विश्वेदेवाः (viśvedevāḥ)  ref=1: ādityās, mitra, varuṇa, viśvedevās; 2, 4-6: viśvedevās; 3: aditi, indra, maruts, mitra, varuṇa, viśvedevās; 7: varuṇa, viśvedevās
+  2:31  ours=विश्वे देवाः (viśve devāḥ)  ref=1: mitra, varuṇa; 2-4, 6, 7: viśvedevās; 5: divaḥ, pṛthivī
+  2:35  ours=अपांनपात् (apāṃnapāt)  ref=apām napād
+  2:38  ours=सविता (savitā)  ref=1-7, 9-11: savitṛ; 8: varuṇa, savitṛ
+  2:42  ours=शकुन्तः (कपिञ्जलरूपीन्द्रः) (śakuntaḥ (kapiñjalarūpīndraḥ))  ref=kapiñjala ivendraḥ
+  2:43  ours=शकुन्तः(= कपिञ्जलरूपीन्द्रः) (śakuntaḥ(= kapiñjalarūpīndraḥ))  ref=kapiñjala ivendraḥ
+  3:2  ours=वैश्वानरोऽग्निः (vaiśvānaro'gniḥ)  ref=agni vaiśvānara
+  … and 96 more
+
+canonical chandas not in ref meters: 46
+  1:36  ours=प्रगाथ  ref_meters=1st set of styles: bhuriganuṣṭup (1, 12); nicṛtpathyābṛhatī (3, 11); bṛhatī (7, 16); nicṛdviṣṭārapaṅkti (10, 14); nicṛtsataḥ paṅkti (2); nicṛtpaṅkti (4); nicṛdbṛhatī (5); bhurigbṛhatī (6); svarāḍbṛhatī (8); nicṛdupariṣṭād bṛhatī (9); upariṣṭād bṛhatī (13); virāṭpathyābṛhatī (15); virāḍupariṣṭād bṛhatī (17); viṣṭārapaṅktiḥ (18); pathyāvṛhatī (19); sataḥpaṅkti (20) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9, 11, 13, 15, 17, 19); satobṛhatī (2, 4, 6, 8, 10, 12, 14, 16, 18, 20)
+  1:39  ours=प्रगाथः  ref_meters=1st set of styles: virāṭsataḥpaṅkti (2, 6, 8, 10); pathyāvṛhatī (1, 5, 9); anuṣṭup (3); nicṛtpaṅkti (4); upariṣṭādvirāḍ bṛhatī (7) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9); satobṛhatī (2, 4, 6, 8, 10)
+  1:40  ours=प्रगाथः  ref_meters=1st set of styles: nicṛdupariṣṭād bṛhatī (1, 2); ārcītriṣṭup (3, 7); sataḥpaṅkti (4, 6); pathyāvṛhatī (5); nicṛtpaṅkti (8) 2nd set of styles: bṛhatī (1, 3, 5, 7); satobṛhatī (2, 4, 6, 8)
+  1:44  ours=प्रगाथः  ref_meters=1st set of styles: virāṭsataḥpaṅkti (2, 4, 8, 14); upariṣṭādvirāḍ bṛhatī (1, 5); bhurigbṛhatī (6, 12); nicṛtpathyābṛhatī (7, 11); nicṛdupariṣṭād bṛhatī (3); ārcītriṣṭup (9); virāḍvistārapaṅkti (10); pathyāvṛhatī (13) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9, 11, 13); satobṛhatī (2, 4, 6, 8, 10, 12, 14)
+  1:47  ours=प्रगाथः  ref_meters=1st set of styles: nicṛtsataḥ paṅkti (2, 6, 8); nicṛtpathyābṛhatī (1, 5); pathyāvṛhatī (3, 7); sataḥpaṅkti (4, 10); virāṭpathyābṛhatī (9) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9); satobṛhatī (2, 4, 6, 8, 10)
+  1:48  ours=प्रगाथः  ref_meters=1st set of styles: virāṭpathyābṛhatī (1, 3, 7, 9); nicṛtsataḥ paṅkti (2, 10, 16); nicṛtpathyābṛhatī (5, 11, 13); virāṭsataḥpaṅkti (4, 14); bhurigbṛhatī (6); paṅktiḥ (8); bṛhatī (12); pathyāvṛhatī (15) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9, 11, 13, 15); satobṛhatī (2, 4, 6, 8, 10, 12, 14, 16)
+  1:121  ours=त्रिष्ष्टुप्  ref_meters=1st set of styles: virāṭtrisṭup (3, 4, 6, 12, 14, 15); bhurikpaṅkti (1, 7, 13); triṣṭup (2, 8, 10); nicṛttriṣṭup (5, 9, 11) 2nd set of styles: triṣṭubh
+  1:149  ours=विराट्  ref_meters=1st set of styles: nicṛdanuṣṭup (2, 4); bhuriganuṣṭup (1); uṣṇik (3); virāḍanuṣṭup (5) 2nd set of styles: virāj
+  1:164  ours=त्रिष्टुप,  ref_meters=1st set of styles: nicṛttriṣṭup (3-8, 11, 18, 26, 31, 33, 34, 37, 43, 46, 47, 49); triṣṭup (2, 10, 13, 16, 17, 19, 21, 24, 28, 32, 52); virāṭtrisṭup (1, 9, 27, 35, 40, 50); bhuriktriṣṭup (14, 39, 41, 44, 45); jagatī (12, 15, 23); svarāṭpaṅkti (22, 25, 48); nicṛjjagatī (29, 36); paṅktiḥ (30, 38); bhurikpaṅkti (20); bhurigbṛhatī (42); virāḍanuṣṭup (51) 2nd set of styles: triṣṭubh (1-11, 13-14, 16-22, 24-28, 30-35, 37-40, 43-50, 52); jagatī (12, 15, 23, 29, 36, 41); prastārapaṅkti (42); anuṣṭubh (51)
+  1:175  ours=बृहती  ref_meters=1st set of styles: svarāḍanuṣṭup (1); virāḍanuṣṭup (2); nicṛttriṣṭup (3); uṣṇik (4); anuṣṭup (5); bhuriktriṣṭup (6) 2nd set of styles: anuṣṭubh (2-5); skandhogrīvī (1); triṣṭubh (6)
+  3:16  ours=प्रगाथः  ref_meters=1st set of styles: bhuriganuṣṭup (1, 5); nicṛtpaṅkti (2, 6); nicṛdbṛhatī (3); bhurikbṛhatī (4) 2nd set of styles: bṛhatī (1, 3, 5); satobṛhatī (2, 4, 6)
+  3:25  ours=त्रिष्टुभ्  ref_meters=1st set of styles: bhuriktriṣṭup (3-5); nicṛdanuṣṭup (1); anuṣṭup (2) 2nd set of styles: virāj
+  5:49  ours=त्रिष्टुभ्  ref_meters=1st set of styles: triṣṭup (1, 2, 4); nicṛttriṣṭup (3); svarāṭpaṅkti (5) 2nd set of styles: anuṣṭubh (1-4); paṅkti (5)
+  6:2  ours=अनुष्टुभ्  ref_meters=1st set of styles: nicṛdanuṣṭup (5, 6, 10); bhuriguṣṇik (1, 9); anuṣṭup (3, 4); svarāḍuṣnik (2); nicṛduṣṇik (7); uṣṇik (8); bhurigatijagatī (11) 2nd set of styles: triṣṭubh
+  6:12  ours=त्रिष्ष्टुप्  ref_meters=1st set of styles: nicṛtpaṅkti (4, 6); triṣṭup (1); nicṛttriṣṭup (2); bhurikpaṅkti (3); svarāṭpaṅkti (5) 2nd set of styles: triṣṭubh
+  6:46  ours=प्रगाथः  ref_meters=1st set of styles: bhurigbṛhatī (3, 4); svarāḍanuṣṭup (5, 7); virāḍabṛhatī (8, 9); virāḍpaṅkti (12, 14); nicṛdanuṣṭup (1); svarāḍbṛhatī (2); brāhmīgāyatrī (6); paṅktiḥ (10); nicṛdbṛhatī (11); bṛhatī (13) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9, 11, 13); satobṛhatī (2, 4, 6, 8, 10, 12, 14)
+  6:48  ours=प्रगाथः  ref_meters=1st set of styles: bṛhatī (1, 4, 5, 14); bhurigbṛhatī (10, 12, 17); virāḍabṛhatī (3, 19); triṣṭup (6, 21); uṣṇik (11, 16); nicṛduṣṇik (13, 18); ārcījagatī (2); nicṛttriṣṭup (7); bhuriktriṣṭup (8); bhuriganuṣṭup (9); nicṛdatijagatī (15); svarāḍanuṣṭup (20); anuṣṭup (22) 2nd set of styles: bṛhatī (1, 3, 5, 9, 14, 19, 20); satobṛhatī (2, 4, 10, 12, 17); triṣṭubh (6, 7); kakubh (11, 16); pura-uṣṇih (13, 18); mahāsatobṛhatī (8); atijagatī (15); yavamadhyā mahābṛhatī (21); anuṣṭubh (22)
+  7:1  ours=विराट्  ref_meters=1st set of styles: ekādaśākṣarapādaistripadāvirāḍgāyatrī (1-18); triṣṭup (19-25) 2nd set of styles: virāj (1-18); triṣṭubh (19-25)
+  7:16  ours=प्रगाथः  ref_meters=1st set of styles: bṛhatī (4, 9, 10); nicṛtpaṅkti (6, 8, 12); svarāḍanuṣṭup (1); bhurigbṛhatī (2); nicṛdbṛhatī (3); nicṛdanuṣṭup (5); anuṣṭup (7); bhuriganuṣṭup (11) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9, 11); satobṛhatī (2, 4, 6, 8, 10, 12)
+  7:32  ours=प्रगाथः  ref_meters=1st set of styles: nicṛdbṛhatī (6, 8, 12, 16, 18, 26); nicṛtpaṅkti (5, 13, 15, 19, 23); virāḍabṛhatī (1, 4, 24); paṅktiḥ (2, 9); bhuriganuṣṭup (10, 14); bṛhatī (11, 27); bhurigbṛhatī (17, 25); svarāḍanuṣṭup (20, 22); sāmnīpaṅkti (3); virāṭpaṅkti (7); svarāḍbṛhatī (21) 2nd set of styles: satobṛhatī (1, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27); bṛhatī (2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26); dvipadā virāj (3)
+  7:59  ours=प्रगाथः  ref_meters=1st set of styles: anuṣṭup (5, 12); gāyatrī (9, 10); nicṛdbṛhatī (1); paṅktiḥ (2); bṛhatī (3); nicṛtpaṅkti (4); svarāḍbṛhatī (6); nicṛttriṣṭup (7); triṣṭup (8); nicṛdgāyatrī (11) 2nd set of styles: bṛhatī (1, 3, 5); satobṛhatī (2, 4, 6); gāyatrī (9-11); triṣṭubh (7, 8); anuṣṭubh (12)
+  7:65  ours=गायत्री  ref_meters=1st set of styles: virāṭtrisṭup (1, 5); nicṛttriṣṭup (3, 4); triṣṭup (2) 2nd set of styles: triṣṭubh
+  7:74  ours=प्रगाथः  ref_meters=1st set of styles: ārṣībhurigbṛhatī (2, 4, 6); nicṛdbṛhatī (1, 3); ārṣībṛhatī (5) 2nd set of styles: bṛhatī (1, 3, 5); satobṛhatī (2, 4, 6)
+  7:81  ours=जगती  ref_meters=1st set of styles: nicṛtpaṅkti (4, 6); virāḍabṛhatī (1); bhurigbṛhatī (2); ārṣībṛhatī (3); nicṛdbṛhatī (5) 2nd set of styles: bṛhatī (1, 3, 5); satobṛhatī (2, 4, 6)
+  8:3  ours=प्रगाथः  ref_meters=1st set of styles: nicṛdbṛhatī (3, 5, 7, 9, 19); nicṛtpaṅkti (4, 12, 16, 18); sataḥpaṅkti (2, 10, 14); bhuriganuṣṭup (11, 21); bṛhatī (15, 24); kakummatībṛhatī (1); bhurikpaṅkti (6); svarāḍbṛhatī (8); anuṣṭup (13); pathyāvṛhatī (17); virāṭpaṅkti (20); virāḍgāyatrī (22); nicṛdgāyatrī (23) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 24); satobṛhatī (2, 4, 6, 8, 10, 12, 14, 16, 18, 20); gāyatrī (22, 23); anuṣṭubh (21)
+  8:4  ours=प्रगाथः  ref_meters=1st set of styles: nicṛtpaṅkti (2, 4, 6, 8, 12, 14, 18); nicṛdbṛhatī (3, 11, 15); bhuriganuṣṭup (1, 13); pathyāvṛhatī (5, 9); virāṭpaṅkti (16, 20); virāḍbṛhatī (17, 19); anuṣṭup (7); sataḥpaṅkti (10); virāḍuṣnik (21) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9, 11, 13, 15, 17, 19); satobṛhatī (2, 4, 6, 8, 10, 12, 14, 16, 18, 20); pura-uṣṇih (21)
+  8:20  ours=प्रगाथः  ref_meters=1st set of styles: kakubuṣṇik (1, 5, 7, 19, 23); sataḥpaṅkti (2, 10, 16, 22); pādanicṛtpaṅkti (4, 6, 12, 18); nicṛtpaṅkti (8, 20, 24, 26); nicṛduṣṇik (9, 13, 21, 25); virāḍuṣnik (3, 15, 17); pādanicṛduṣṇik (11); ārcībhurikpaṅkti (14) 2nd set of styles: kakubh (1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25); satobṛhatī (2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26)
+  8:21  ours=प्रगाथः  ref_meters=1st set of styles: kakubuṣṇik (5, 7, 9, 11); nicṛtpaṅkti (6, 8, 16, 18); virāḍuṣnik (1, 3, 15); pādanicṛtpaṅkti (2, 12, 14); nicṛduṣṇik (13, 17); bhurikpaṅkti (4); virāṭpaṅkti (10) 2nd set of styles: kakubh (1, 3, 5, 7, 9, 11, 13, 15, 17); satobṛhatī (2, 4, 6, 8, 10, 12, 14, 16, 18)
+  8:27  ours=प्रगाथः  ref_meters=1st set of styles: paṅktiḥ (2, 8, 14, 20); nicṛtpaṅkti (4, 6, 16, 22); nicṛdbṛhatī (1, 7, 9); virāḍbṛhatī (5, 11, 13); bṛhatī (18, 19, 21); śaṅkummatībṛhatī (3); pādanicṛtpaṅkti (10); ārcīsvarāṭpaṅkti (12); ārcībṛhatī (15); virāṭpaṅkti (17) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21); satobṛhatī (2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22)
+  8:35  ours=त्रिष्टुभ्  ref_meters=1st set of styles: virāṭtrisṭup (1-5, 16, 18); bhurikpaṅkti (6, 10-12, 14, 15, 17); nicṛttriṣṭup (7-9, 13); paṅktiḥ (20, 21, 24); nicṛtpaṅkti (19, 22); purastājyotirnāmajagatī (23) 2nd set of styles: upariṣṭājjyotis (1-21); paṅkti (22, 24); mahābṛhatī (23)
+  8:49  ours=प्रगाथः  ref_meters=1st set of styles: nicṛtpaṅkti (4, 6, 8, 10); nicṛdbṛhatī (7, 9); bṛhatī (1); paṅktiḥ (2); virāḍbṛhatī (3); bhurigbṛhatī (5) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9); satobṛhatī (2, 4, 6, 8, 10)
+  8:50  ours=प्रगाथः  ref_meters=1st set of styles: nicṛdbṛhatī (1, 3, 5, 7); paṅktiḥ (2, 4, 6, 10); nicṛtpaṅkti (8); virāḍbṛhatī (9) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9); satobṛhatī (2, 4, 6, 8, 10)
+  8:51  ours=प्रगाथः  ref_meters=1st set of styles: nicṛtpaṅkti (4, 6, 8, 10); nicṛdbṛhatī (1, 3, 9); virāṭpaṅkti (2); virāḍbṛhatī (5); bṛhatī (7) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9); satobṛhatī (2, 4, 6, 8, 10)
+  8:52  ours=प्रगाथः  ref_meters=1st set of styles: nicṛtpaṅkti (4, 6, 8, 10); nicṛdbṛhatī (1, 7); bṛhatī (3, 5); pādanicṛtpaṅkti (2); virāḍbṛhatī (9) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9); satobṛhatī (2, 4, 6, 8, 10)
+  8:53  ours=प्रगाथः  ref_meters=1st set of styles: virāḍbṛhatī (1, 5, 7); nicṛtpaṅkti (2, 4, 6); pādnicṛtpathyābṛhatī (3); virāṭpaṅkti (8) 2nd set of styles: bṛhatī (1, 3, 5, 7); satobṛhatī (2, 4, 6, 8)
+  8:54  ours=प्रगाथः  ref_meters=1st set of styles: nicṛtpaṅkti (2, 4, 6, 8); nicṛtbṛhatī (1, 5); bṛhatī (3); virāḍbṛhatī (7) 2nd set of styles: bṛhatī (1, 3, 5, 7); satobṛhatī (2, 4, 6, 8)
+  8:60  ours=प्रगाथः  ref_meters=1st set of styles: nicṛtpaṅkti (4, 6, 8, 14, 18, 20); virāḍbṛhatī (1, 9, 13, 17); pādnicṛdbṛhatī (3, 5); bṛhatī (7, 19); pādanicṛtpaṅkti (10, 16); nicṛdbṛhatī (11, 15); sataḥpaṅkti (2); paṅktiḥ (12) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9, 11, 13, 15, 17, 19); satobṛhatī (2, 4, 6, 8, 10, 12, 14, 16, 18, 20)
+  8:61  ours=प्रगाथः  ref_meters=1st set of styles: nicṛdbṛhatī (1, 5, 11, 15); paṅktiḥ (2, 4, 10); virāṭpaṅkti (6, 14, 16); nicṛtpaṅkti (8, 12, 18); virāḍbṛhatī (3, 9); pādnicṛdbṛhatī (7, 17); bṛhatī (13) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9, 11, 13, 15, 17); satobṛhatī (2, 4, 6, 8, 10, 12, 14, 16, 18)
+  8:66  ours=प्रगाथः  ref_meters=1st set of styles: virāḍbṛhatī (3, 5, 11, 13); nicṛtpaṅkti (2, 8, 12); virāṭpaṅkti (4, 6); anuṣṭup (9, 15); bṛhatī (1); pādnicṛdbṛhatī (7); paṅktiḥ (10); pādanicṛtpaṅkti (14) 2nd set of styles: bṛhatī (1, 3, 5, 7, 9, 11, 13); satobṛhatī (2, 4, 6, 8, 10, 12, 14); anuṣṭubh (15)
+  8:87  ours=प्रगाथः  ref_meters=1st set of styles: nicṛtpaṅkti (2, 4, 6); bṛhatī (1, 3); nicṛdbṛhatī (5) 2nd set of styles: bṛhatī (1, 3, 5); satobṛhatī (2, 4, 6)
+  … and 6 more
+
+Notes:
+- VMLT names are romanized; comparison uses folded IAST keys.
+- Composite / per-verse meters may flag false chandas mismatches.
+- Use this report to drive Stage 4 patches, not extract overwrites.

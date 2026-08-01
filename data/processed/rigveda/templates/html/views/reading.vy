@@ -21,15 +21,6 @@
                 padding: 1rem;
                 background: #fff;
             }
-            .verse-header {
-                text-align: center;
-                font-weight: 600;
-                font-size: 1.15rem;
-                color: #2c3e50;
-                margin-bottom: 0.75rem;
-                padding-bottom: 0.5rem;
-                border-bottom: 1px solid #f0f0f0;
-            }
             .verse-meta {
                 display: flex;
                 flex-wrap: wrap;
@@ -72,34 +63,27 @@
 
 `item [
 `div { class="verse-content" } [
-    `div { class="verse-header" } [ {{ mandala }}:{{ sukta }}:{{ rik }} ]
     `div { class="verse-meta" } [
         `span { class="meta-item" } [
-            `span { class="meta-label" } [ देवता ]
+            `span { class="meta-label" } [देवता]
             `span { class="meta-value" } [ {{ devata }} ]
         ]
         `span { class="meta-item" } [
-            `span { class="meta-label" } [ ऋषि ]
+            `span { class="meta-label" } [ऋषि]
             `span { class="meta-value" } [ {{ rishi }} ]
         ]
         `span { class="meta-item" } [
-            `span { class="meta-label" } [ छन्दस् ]
+            `span { class="meta-label" } [छन्दस्]
             `span { class="meta-value" } [ {{ chandas }} ]
         ]
     ]
     `div { class="verse-stack" } [
-        `div { class="label" } [ संहिता ]
-        `div { class="deva-text samhita-text stream-content" } [
-            `stream { ref="primary" }
-        ]
-        `div { class="label" } [ पदपाठः ]
-        `div { class="deva-text pada-text stream-content" } [
-            `stream { ref="padapatha" }
-        ]
-        `div { class="label" } [ सायणभाष्यम् ]
-        `div { class="deva-text sayana-text stream-content" } [
-            `stream { ref="sayana" }
-        ]
+        `div { class="label" } [संहिता]
+        `div { class="deva-text samhita-text stream-content" } [`stream { ref="primary" }]
+        `div { class="label" } [पदपाठः]
+        `div { class="deva-text pada-text stream-content" } [`stream { ref="padapatha" }]
+        `div { class="label" } [सायणभाष्यम्]
+        `div { class="deva-text sayana-text stream-content" } [`stream { ref="sayana" }]
     ]
 ]
 ]

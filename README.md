@@ -31,9 +31,11 @@ This is a **public publisher repo** with a small `main` branch and a **GitHub Pa
 
 ```bash
 bun install
+export REFERENCE_SNAPSHOTS=/path/to/reference-snapshot-001  # required for enrich:rv
 bun run crawl:rv      # polite fetch from sa.wikisource.org (~30 min, idempotent)
 bun run extract:rv
 bun run transform:rv
+bun run enrich:rv
 bun run verify:rv
 bun run build:rv      # vyasac pack + publish → dist/
 bun run deploy        # push dist/ to GitHub Pages
@@ -53,7 +55,7 @@ Sanskrit Wikisource provides a rich **Devanagari textual tradition**:
 2. **Padapatha (पदपाठः)** — word-by-word division
 3. **Sayanacharya Bhashya (सायणाचार्य भाष्य)** — classical Sanskrit commentary
 
-We extract these three layers into structured Vyasa streams, enable out-of-band enrichments (patch stage), and publish a static package — **without** burdening Wikimedia servers unnecessarily.
+We extract these three layers into structured Vyasa streams, enrich anukramani from a private VMLT snapshot (`enrich:rv`), and publish a static package — **without** burdening Wikimedia servers unnecessarily.
 
 ---
 
@@ -63,8 +65,8 @@ We extract these three layers into structured Vyasa streams, enable out-of-band 
 [sa.wikisource.org] ──(1. Crawl)──> [data/raw/] ──(2. Extract)──> [data/extracted/]
                                                                        │
 [GitHub Pages]      <──(5. Verify + pack)── [data/processed/] <──(3. Transform)─┘
-        ↑
-  (4. Patch — semantic enrichments)
+        ↑                                              ↑
+        │                                    (4. Enrich — VMLT anukramani)
 ```
 
 | Stage | Command | Output |
@@ -72,14 +74,16 @@ We extract these three layers into structured Vyasa streams, enable out-of-band 
 | 1 Crawl | `bun run crawl:rv` | `data/raw/rigveda/**/*.html` (local only) |
 | 2 Extract | `bun run extract:rv` | `data/extracted/rigveda/**/*.json` (local only) |
 | 3 Transform | `bun run transform:rv` | `data/processed/rigveda/content/**/*.vy` (local only) |
-| 4 Patch | `bun run patch:rv` | `data/patches/` (stub) |
+| 4 Enrich | `bun run enrich:rv` | `annotations/anukramani/`, `vocabulary/{entities,meters}.vy` |
 | 5 Verify | `bun run verify:rv` | `data/audit/rigveda-segments-latest.txt` |
 | Pack | `bun run build:rv` | `dist/catalog.json`, `dist/rigveda/rigveda.vyview` |
 | Deploy | `bun run deploy` | GitHub Pages |
 
+Requires `REFERENCE_SNAPSHOTS` for enrich (see `notes/enrich-rv.md`). `patch:rv` is deprecated.
+
 Sample commands: `bun run extract:sample`, `bun run transform:sample`.
 
-Further reading: `notes/extract-schema.md`, `notes/variants-and-segments.md`, `notes/verification.md`, `notes/rigveda.md`.
+Further reading: `notes/extract-schema.md`, `notes/variants-and-segments.md`, `notes/verification.md`, `notes/rigveda.md`, `notes/enrich-rv.md`.
 
 ---
 
@@ -97,6 +101,7 @@ bun install
 # Full corpus (after crawl or release tarball)
 bun run extract:rv
 bun run transform:rv
+bun run enrich:rv
 bun run verify:rv
 bun run build:rv
 

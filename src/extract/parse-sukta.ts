@@ -1,11 +1,26 @@
 import * as cheerio from "cheerio";
 import {
+  extractMeterFromProse,
+  isGarbageChandas,
+  isVerseNumberToken,
+  normalizeChandasLabel,
+  stripChandasNoise,
+} from "../lib/anukramani";
+import {
   type ExtractedRik,
   type ExtractedSukta,
   ExtractedSuktaSchema,
   pad2,
   pad3,
 } from "../schema/rigveda";
+
+export interface ParseSuktaOptions {
+  html: string;
+  sourceFile: string;
+  sourceUrl: string;
+  mandala: number;
+  sukta: number;
+}
 
 const VEDIC_ACCENT = /[\u0951\u0952]/;
 const VERSE_END = /॥\s*([०-९0-9]+)\s*॥?\s*$/;
@@ -131,46 +146,21 @@ function extractAnukramaniTable(html: string): {
   const devata = deMatch[1].trim() || null;
   const afterDe = text.slice(deMatch.index! + deMatch[0].length);
   const chMatch = /[।\s]*([^\s।]+)/u.exec(afterDe);
+  let chandas: string | null = null;
   const rawChandas = chMatch?.[1]?.trim() || null;
-  const chandas = rawChandas ? normalizeChandasLabel(rawChandas) : null;
+  if (rawChandas) {
+    const cleaned = stripChandasNoise(rawChandas);
+    chandas = normalizeChandasLabel(cleaned);
+    if (isVerseNumberToken(cleaned) || isGarbageChandas(chandas)) {
+      chandas = extractMeterFromProse(text);
+    }
+  }
 
   return { devata, chandas };
 }
 
-function normalizeChandasLabel(label: string): string {
-  const patterns: Array<[RegExp, string]> = [
-    [/गायत्र/u, "गायत्री"],
-    [/त्रैष्टुभ|त्रिष्टुभ|त्रिष्टुप्/u, "त्रिष्टुभ्"],
-    [/जगती|जागत/u, "जगती"],
-    [/अनुष्टुभ|अनुष्टुप्/u, "अनुष्टुभ्"],
-    [/पङ्क्ति/u, "पङ्क्ति"],
-  ];
-  for (const [re, canonical] of patterns) {
-    if (re.test(label)) return canonical;
-  }
-  return label;
-}
-
 function guessChandas(intro: string): string | null {
-  const patterns: Array<[RegExp, string]> = [
-    [/गायत्र/u, "गायत्री"],
-    [/त्रैष्टुभ|त्रिष्टुभ/u, "त्रिष्टुभ्"],
-    [/जगती|जागत/u, "जगती"],
-    [/अनुष्टुभ|अनुष्टुप्/u, "अनुष्टुभ्"],
-    [/पङ्क्ति/u, "पङ्क्ति"],
-  ];
-  for (const [re, label] of patterns) {
-    if (re.test(intro)) return label;
-  }
-  return null;
-}
-
-function guessChandas(intro: string): string | null {
-  html: string;
-  sourceFile: string;
-  sourceUrl: string;
-  mandala: number;
-  sukta: number;
+  return extractMeterFromProse(intro);
 }
 
 export function parseSuktaHtml(opts: ParseSuktaOptions): ExtractedSukta {

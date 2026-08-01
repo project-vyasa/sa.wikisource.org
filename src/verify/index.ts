@@ -162,7 +162,7 @@ async function auditSegments(): Promise<string> {
     "Counts use padapatha danda tokens (or `|` in .vy when present).",
     `p100 (max segments per rik): ${p100}`,
     `segment_bit_width (ceil log2(p100+1)): ${bitWidth}`,
-    `compiler_segment_limit: ${COMPILER_SEGMENT_LIMIT} (vyasac 4-bit sub-segment field; RFC-019)`,,
+    `compiler_segment_limit: ${COMPILER_SEGMENT_LIMIT} (vyasac 4-bit sub-segment field; RFC-019)`,
     `riks above compiler limit (> ${COMPILER_SEGMENT_LIMIT}): ${aboveLimitCount}`,
     "",
     "=== Missing padapatha ===",
