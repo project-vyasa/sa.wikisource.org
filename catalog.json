@@ -1,13 +1,15 @@
 {
   "schemaVersion": "1.0.0",
-  "identifier": "sa_wikisource",
+  "id": "sa_wikisource",
   "title": "Sanskrit Wikisource (विकिस्रोतः)",
+  "description": "Open-access Sanskrit texts from Wikimedia Wikisource, beginning with Rig Veda Samhita, Padapatha, and Sayanacharya Bhashya.",
   "publications": [
     {
       "id": "rigveda",
       "title": "ऋग्वेदः",
       "vyviewUrl": "rigveda/rigveda.vyview",
-      "updated": 1785309631
+      "updated": 1785569153,
+      "description": "Rig Veda Samhita, Padapatha, and Sayanacharya Bhashya from Sanskrit Wikisource"
     }
   ]
 }
