@@ -8,8 +8,11 @@
       "id": "rigveda",
       "title": "ऋग्वेदः",
       "vyviewUrl": "rigveda/rigveda.vyview",
-      "updated": 1787123132,
-      "description": "Rig Veda Samhita, Padapatha, and Sayanacharya Bhashya from Sanskrit Wikisource"
+      "updated": 1788041370,
+      "description": "Rig Veda Samhita, Padapatha, and Sayanacharya Bhashya from Sanskrit Wikisource",
+      "type": "work",
+      "language": "sa",
+      "license": "CC-BY-SA-4.0"
     }
   ]
 }
