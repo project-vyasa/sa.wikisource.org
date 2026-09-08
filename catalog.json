@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "id": "sa_wikisource",
   "title": "Sanskrit Wikisource (विकिस्रोतः)",
-  "description": "Open-access Sanskrit texts from Wikimedia Wikisource, beginning with Rig Veda Samhita, Padapatha, and Sayanacharya Bhashya.",
+  "description": "Open-access Sanskrit texts from Wikimedia Wikisource: Rig Veda and Aṣṭādhyāyī.",
   "publications": [
     {
       "id": "rigveda",
@@ -10,6 +10,16 @@
       "vyviewUrl": "rigveda/rigveda.vyview",
       "updated": 1788076997,
       "description": "Rig Veda Samhita, Padapatha, and Sayanacharya Bhashya from Sanskrit Wikisource",
+      "type": "work",
+      "language": "sa",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "id": "ashtadhyayi",
+      "title": "अष्टाध्यायी",
+      "vyviewUrl": "ashtadhyayi/ashtadhyayi.vyview",
+      "updated": 1788809385,
+      "description": "Pāṇini's Aṣṭādhyāyī (sūtra text and Hindi vyākhyā) from Sanskrit Wikisource",
       "type": "work",
       "language": "sa",
       "license": "CC-BY-SA-4.0"
