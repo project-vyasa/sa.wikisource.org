@@ -1,23 +1,9 @@
-// Semantic HTML templates for Rig Veda streams
+// Semantic HTML templates — structure only; typography lives in .css (publisher_css / css).
 
-`samhita [
-`div { class="samhita" style="white-space: pre-line;" } [$.body]
-]
-
-`padapatha [
-`div { class="padapatha" style="white-space: pre-line;" } [$.body]
-]
-
-`bhashya [
-`div { class="bhashya" style="white-space: pre-line;" } [$.body]
-]
-
-`v [
-`div { class="verse" style="white-space: pre-line; margin-bottom: 1.5rem;" } [
-  `strong { style="display: block; color: #64748b; font-size: 0.9em; margin-bottom: 0.25rem;" } [ऋक् $.argument]
-  $.body
-]
-]
+`samhita [`div { class="samhita" } [$.body]]
+`padapatha [`div { class="padapatha" } [$.body]]
+`bhashya [`div { class="bhashya" } [$.body]]
+`rik [`div { class="rik" } [$.body]]
 
 `ref [ `a { href="$.argument" } [$.body] ]
 `e1 [ `strong [$.body] ]

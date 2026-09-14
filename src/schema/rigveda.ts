@@ -47,10 +47,4 @@ export type Anukramani = z.infer<typeof AnukramaniSchema>;
 export type ExtractedRik = z.infer<typeof ExtractedRikSchema>;
 export type ExtractedSukta = z.infer<typeof ExtractedSuktaSchema>;
 
-export function pad2(n: number): string {
-  return String(n).padStart(2, "0");
-}
-
-export function pad3(n: number): string {
-  return String(n).padStart(3, "0");
-}
+export { pad2, pad3 } from "../lib/devanagari-numerals";

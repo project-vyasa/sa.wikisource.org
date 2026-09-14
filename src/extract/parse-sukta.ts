@@ -6,12 +6,12 @@ import {
   normalizeChandasLabel,
   stripChandasNoise,
 } from "../lib/anukramani";
+import { devanagariToArabic, pad2, pad3 } from "../lib/devanagari-numerals";
+import { normalizePara } from "../lib/html-text";
 import {
   type ExtractedRik,
   type ExtractedSukta,
   ExtractedSuktaSchema,
-  pad2,
-  pad3,
 } from "../schema/rigveda";
 
 export interface ParseSuktaOptions {
@@ -26,42 +26,6 @@ const VEDIC_ACCENT = /[\u0951\u0952]/;
 const VERSE_END = /॥\s*([०-९0-9]+)\s*॥?\s*$/;
 const SAYANA_HDR = /सायणभाष्यम्/;
 const SUKTA_NAV = /^सूक्तं\s+[०-९0-9]+(?:\.[०-९0-9]+)?$/u;
-const DEV_TO_ARABIC: Record<string, string> = {
-  "०": "0",
-  "१": "1",
-  "२": "2",
-  "३": "3",
-  "४": "4",
-  "५": "5",
-  "६": "6",
-  "७": "7",
-  "८": "8",
-  "९": "9",
-};
-
-function devanagariToArabic(str: string): string {
-  return str.replace(/[०-९]/g, (ch) => DEV_TO_ARABIC[ch] ?? ch);
-}
-
-function decodeEntities(text: string): string {
-  return text
-    .replace(/&nbsp;/g, " ")
-    .replace(/&#160;/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&#8216;/g, "'")
-    .replace(/&#8217;/g, "'")
-    .replace(/&quot;/g, '"')
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">");
-}
-
-function normalizePara(text: string): string {
-  return decodeEntities(text)
-    .replace(/[ \t]+/g, " ")
-    .replace(/\n+/g, "\n")
-    .trim();
-}
-
 function isStopPara(text: string): boolean {
   return (
     text.includes("टिप्पणी") ||

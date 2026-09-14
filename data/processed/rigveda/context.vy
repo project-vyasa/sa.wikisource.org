@@ -10,7 +10,6 @@
 `command-def { name="annotate" category="metadata" flexible_args="true" }
 
 `set settings {
-  whitespace = "preserve",
   break_after = "।॥"
 }
 

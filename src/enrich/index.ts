@@ -7,15 +7,20 @@ import {
   ExtractedSuktaSchema,
   type ExtractedSukta,
 } from "../schema/rigveda";
-import { applyDisplayContextForSukta } from "./apply-display-context";
+import { applyDisplayContextFromRoman } from "./apply-display-context";
 import {
-  buildAnukramaniSpans,
+  buildAnukramaniSpansFromRoman,
   formatAnnotateLine,
   formatEntitiesVocabulary,
   formatFacetsVocabulary,
   formatMandalaAnnotationsFile,
   formatMetersVocabulary,
 } from "./emit-anukramani";
+import {
+  loadSriAurobindoAnukramani,
+  romanByRikFromSriAurobindo,
+} from "../lib/sri-aurobindo-anukramani";
+import { buildPerRikRoman } from "../lib/vmlt-ranges";
 
 /**
  * Stage 4: Enrich Rig Veda workspace with VMLT anukramani (graph annotations).
@@ -72,30 +77,46 @@ export async function enrichRigVeda(
     meters: 0,
   };
 
+  const sriAurobindo = await loadSriAurobindoAnukramani();
   console.log(`[Enrich] Workspace: ${WORKSPACE_DIR}`);
-  console.log(`[Enrich] VMLT snapshot: ${snapshotRoot} (${snapshotDate})`);
+  if (sriAurobindo) {
+    console.log(
+      `[Enrich] Anukramani source: sri-aurobindo.co.in (${sriAurobindo.size} sukta(s))`,
+    );
+  } else {
+    console.log(`[Enrich] VMLT snapshot: ${snapshotRoot} (${snapshotDate})`);
+  }
 
   for (const file of await listExtractedJson()) {
     const sukta = ExtractedSuktaSchema.parse(
       JSON.parse(await fs.readFile(file, "utf8")),
     ) as ExtractedSukta;
 
-    const vmlt = await readVmltSukta(
-      snapshotRoot,
-      snapshotDate,
-      sukta.mandala,
-      sukta.sukta,
-    );
-    if (!vmlt?.info) {
-      stats.skipped += 1;
-      continue;
+    const saKey = `${Number.parseInt(sukta.mandala, 10)}:${Number.parseInt(sukta.sukta, 10)}`;
+    const saSukta = sriAurobindo?.get(saKey);
+
+    let romanByRik = saSukta
+      ? romanByRikFromSriAurobindo(saSukta, sukta.riks.length)
+      : null;
+    if (!romanByRik) {
+      const vmlt = await readVmltSukta(
+        snapshotRoot,
+        snapshotDate,
+        sukta.mandala,
+        sukta.sukta,
+      );
+      if (!vmlt?.info) {
+        stats.skipped += 1;
+        continue;
+      }
+      romanByRik = buildPerRikRoman(vmlt.info, sukta.riks.length);
     }
 
-    const spans = buildAnukramaniSpans(
+    const spans = buildAnukramaniSpansFromRoman(
       sukta.mandala,
       sukta.sukta,
       sukta.riks.length,
-      vmlt.info,
+      romanByRik,
       registry,
     );
     if (spans.length === 0) {
@@ -115,11 +136,11 @@ export async function enrichRigVeda(
       bucket.push(formatAnnotateLine(span));
     }
 
-    const display = await applyDisplayContextForSukta(
+    const display = await applyDisplayContextFromRoman(
       WORKSPACE_DIR,
       sukta.mandala,
       sukta.sukta,
-      vmlt.info,
+      romanByRik,
       sukta.riks.length,
       registry,
     );
@@ -162,7 +183,7 @@ export async function enrichRigVeda(
     `[Enrich] ${stats.suktas} sukta(s), ${stats.spans} annotate span(s) → annotations/anukramani/`,
   );
   console.log(
-    `[Enrich] Display context: uniform=${stats.uniformDisplay} mixed(strip)=${stats.mixedDisplay} skipped=${stats.skipped}`,
+    `[Enrich] Display context: uniform(denorm)=${stats.uniformDisplay} mixed(strip)=${stats.mixedDisplay} skipped=${stats.skipped}`,
   );
   console.log(
     `[Enrich] Vocabulary: ${stats.entities} entities, ${stats.meters} meters, facets → vocabulary/`,

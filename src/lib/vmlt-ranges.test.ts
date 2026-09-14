@@ -38,6 +38,13 @@ describe("parseIndexedProse", () => {
     expect(map.get(1)).toBe("agni");
     expect(map.get(3)).toBe("agni");
   });
+
+  it("parses range-then-comma lists (1-3, 6, 7: indra)", () => {
+    const map = parseIndexedProse("1-3, 6, 7: indra; 4, 5: aśvins", 7);
+    expect(map.get(1)).toBe("indra");
+    expect(map.get(4)).toBe("aśvins");
+    expect(map.get(7)).toBe("indra");
+  });
 });
 
 describe("parseMeterRanges", () => {

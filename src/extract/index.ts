@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { arabicToDevanagari, pad2, pad3 } from "../lib/devanagari-numerals";
 import { parseSuktaHtml } from "./parse-sukta";
-import { pad2, pad3 } from "../schema/rigveda";
 
 /**
  * Stage 2: Extract structured Rig Veda JSON from cached Wikisource HTML.
@@ -14,12 +14,6 @@ import { pad2, pad3 } from "../schema/rigveda";
 const RAW_DIR = path.resolve("data/raw/rigveda");
 const EXTRACTED_DIR = path.resolve("data/extracted/rigveda");
 const BASE_DOMAIN = "https://sa.wikisource.org";
-
-const DEV_DIGITS = "०१२३४५६७८९";
-
-function arabicToDevanagari(str: string): string {
-  return str.replace(/[0-9]/g, (d) => DEV_DIGITS[Number(d)] ?? d);
-}
 
 async function ensureDir(dirPath: string) {
   await fs.mkdir(dirPath, { recursive: true });

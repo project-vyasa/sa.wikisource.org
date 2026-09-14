@@ -21,4 +21,4 @@
 
 Padapatha and Sayana streams use the same `` `v N `` ids under
 `content/padapatha/` and `content/sayana/`. Global URN prefix is owned by
-`publisher.toml` + workspace config — not repeated in extract JSON or verse bodies.
+`sa_wikisource/publisher.toml` + workspace config — not repeated in extract JSON or verse bodies.

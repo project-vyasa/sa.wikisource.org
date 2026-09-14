@@ -1,10 +1,10 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { pad2, pad3 } from "../lib/devanagari-numerals";
+import { emitBlock } from "../lib/vy-emit";
 import {
   ExtractedSuktaSchema,
   type ExtractedSukta,
-  pad2,
-  pad3,
 } from "../schema/rigveda";
 
 /**
@@ -30,20 +30,6 @@ function parseTarget(spec: string): { mandala: number; sukta: number } {
   const m = /^(\d{1,2})\.(\d{1,3})$/.exec(spec.trim());
   if (!m) throw new Error(`Invalid sukta spec "${spec}"; expected M.S like 1.1`);
   return { mandala: Number(m[1]), sukta: Number(m[2]) };
-}
-
-function escapeAttr(value: string): string {
-  return value.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
-}
-
-/** Emit a command body; use a delimited block when raw brackets/backticks appear. */
-function emitBlock(cmd: string, arg: number | null, body: string): string {
-  const needsDelim = body.includes("]") || body.includes("`");
-  const head = arg == null ? `\`${cmd}` : `\`${cmd} ${arg}`;
-  if (needsDelim) {
-    return `${head} ;RV [\n${body}\n]RV`;
-  }
-  return `${head} [\n${body}\n]`;
 }
 
 function suktaDisplayId(mandala: string, sukta: string): string {

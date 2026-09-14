@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import type { EntityRegistry } from "../lib/entity-registry";
+import { chandasKeyFromMeterProse } from "../lib/chandas-keys";
 import {
   buildPerRikRoman,
   isUniformTriple,
@@ -93,18 +94,17 @@ export function patchVyContext(
 
 /**
  * Mixed suktas: strip sukta-level anukramani from `set context` (per-rik values
- * come from graph annotate + viewer weave). Uniform suktas: no denorm — graph edges
- * and weave context supply {{ devata }} / {{ rishi }} / {{ chandas }}.
+ * wait on graph-aware weave). Uniform suktas: denorm Devanagari labels into
+ * `sukta.rishi` / `sukta.devata` / `sukta.chandas` for `{{ rishi }}` etc.
  */
-export async function applyDisplayContextForSukta(
+export async function applyDisplayContextFromRoman(
   workspaceDir: string,
   mandala: string,
   sukta: string,
-  info: { from?: string; to?: string; meters?: string },
+  romanByRik: Map<number, { rishi?: string; devata?: string; chandas?: string }>,
   rikCount: number,
-  _registry: EntityRegistry,
+  registry: EntityRegistry,
 ): Promise<{ updated: number; mode: "uniform" | "mixed" | "skip" }> {
-  const romanByRik = buildPerRikRoman(info, rikCount);
   const keysByRik = new Map<
     number,
     { rishi: string; devata: string; chandas: string }
@@ -126,11 +126,10 @@ export async function applyDisplayContextForSukta(
     return { updated: 0, mode: "skip" };
   }
 
-  if (uniform) {
-    return { updated: 0, mode: "uniform" };
-  }
-
-  const patch: DisplayContextPatch = { stripOnly: true };
+  const first = keysByRik.get(1);
+  const patch: DisplayContextPatch = uniform && first
+    ? labelsFromRoman(first, registry)
+    : { stripOnly: true };
 
   let updated = 0;
   for (const stream of STREAMS) {
@@ -153,5 +152,40 @@ export async function applyDisplayContextForSukta(
     }
   }
 
-  return { updated, mode: "mixed" };
+  return { updated, mode: uniform ? "uniform" : "mixed" };
+}
+
+export async function applyDisplayContextForSukta(
+  workspaceDir: string,
+  mandala: string,
+  sukta: string,
+  info: { from?: string; to?: string; meters?: string },
+  rikCount: number,
+  registry: EntityRegistry,
+): Promise<{ updated: number; mode: "uniform" | "mixed" | "skip" }> {
+  return applyDisplayContextFromRoman(
+    workspaceDir,
+    mandala,
+    sukta,
+    buildPerRikRoman(info, rikCount),
+    rikCount,
+    registry,
+  );
+}
+
+function labelsFromRoman(
+  roman: { rishi: string; devata: string; chandas: string },
+  registry: EntityRegistry,
+): DisplayContextPatch {
+  const rishi = registry.registerRoman(roman.rishi, "entity");
+  const devata = registry.registerRoman(roman.devata, "entity");
+  const mapped = chandasKeyFromMeterProse(roman.chandas);
+  const chandas = mapped
+    ? registry.registerChandasKey(mapped.key, mapped.label, roman.chandas)
+    : registry.registerRoman(roman.chandas, "meter");
+  return {
+    rishi: registry.labelFor(rishi),
+    devata: registry.labelFor(devata),
+    chandas: registry.labelFor(chandas),
+  };
 }

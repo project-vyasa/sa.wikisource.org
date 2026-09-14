@@ -35,7 +35,7 @@ export function parseIndexedProse(
   const text = prose?.trim() ?? "";
   if (!text || rikCount <= 0) return result;
 
-  const hasIndexedSegments = /(?:^|;)\s*[\d०-९,\s]+(?:-\d+)?\s*:/.test(text);
+  const hasIndexedSegments = /(?:^|;)\s*[\d०-९][\d०-९,\s-]*\s*:/.test(text);
   if (!hasIndexedSegments) {
     for (let i = 1; i <= rikCount; i++) result.set(i, text);
     return result;
@@ -44,7 +44,7 @@ export function parseIndexedProse(
   for (const segment of text.split(";")) {
     const trimmed = segment.trim();
     if (!trimmed) continue;
-    const m = /^([\d०-९,\s]+(?:-\d+)?)\s*:\s*(.+)$/.exec(trimmed);
+    const m = /^([\d०-९,\s-]+)\s*:\s*(.+)$/.exec(trimmed);
     if (!m) continue;
     const value = m[2].trim();
     for (const rik of expandRikRangeTokens(m[1])) {

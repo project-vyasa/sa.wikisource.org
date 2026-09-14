@@ -2,7 +2,7 @@
 
 **For:** `vyasa-apps` (viewer) and optionally `vyasa` / `vyasav` (annotation query)  
 **Triggered by:** `sa.wikisource.org` `enrich:rv` — Rig Veda anukramani now lives in the **graph** (`annotate` spans), not Wikisource `block_attributes`.  
-**Consumer test package:** `sa.wikisource.org/dist/rigveda/rigveda.vyview` (ETEB build with `enrich:rv`).
+**Consumer test package:** `sa.wikisource.org/sa_wikisource/dist/rigveda/rigveda.vyview` (ETEB build with `enrich:rv`).
 
 ---
 
@@ -36,7 +36,7 @@ Packed data is correct (~9,699 `RISHI` / `DEVATA` / `CHANDAS` graph edges per ri
 - **Node** per attribute value: `label_id` = `Rishi` / `Devata` / `Chandas` (capitalized key), `attributes` = `{"value":"savitri"}` (entity key string)
 - **Edge** per target leaf URN: `source_id` = value node, `target_id` = encoded rik URN, `type_id` = `RISHI` / `DEVATA` / `CHANDAS`
 
-Verified in `dist/rigveda/rigveda.vyview` (SQLite).
+Verified in `sa_wikisource/dist/rigveda/rigveda.vyview` (SQLite).
 
 ### Viewer load path — **broken for annotate facets**
 
@@ -68,7 +68,7 @@ WHERE d.value IN ('Action', 'Note', 'Event', 'Attribute')
 
 ## Required behavior (acceptance criteria)
 
-Using `sa.wikisource.org/dist` served at `http://localhost:8080/sa_wikisource/` (vyasa-samples Caddy):
+Using `sa.wikisource.org/sa_wikisource/dist` served at `http://localhost:8080/sa_wikisource/` (vyasa-samples Caddy):
 
 1. **Mixed sukta 1.24** — explorer shows per-rik devatā facets (e.g. rik 1 = prajāpati, rik 2 = agni, riks 3–5 = savitr, 6–15 = varuna). Filtering rik 2 by devatā highlights only that rik.
 2. **Uniform sukta 1.1** — all 9 riks share one devatā / ṛṣi / chandas facet value; counts = 9.

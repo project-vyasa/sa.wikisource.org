@@ -1,5 +1,5 @@
 # Facet noise audit — 2026-08-01
-vyview: /Users/anand/Projects/project-vyasa/sa.wikisource.org/dist/rigveda/rigveda.vyview
+vyview: /Users/anand/Projects/project-vyasa/sa.wikisource.org/sa_wikisource/dist/rigveda/rigveda.vyview
 
 distinct leaf targets (graph_edges): 9902
 leaves with DEVATA edge: 9901

@@ -31,7 +31,8 @@ bun run enrich:rv
 | Input | Purpose |
 | :--- | :--- |
 | `data/extracted/rigveda/**/*.json` | Rik count per sukta (span bounds) |
-| `$REFERENCE_SNAPSHOTS/snapshots/vmlt-firebase/rigveda/{date}/data/{mm}/{mm}-{sss}.json` | `info.from`, `info.to`, `info.meters` |
+| `sri-aurobindo.co.in/data/extracted/anukramani.json` | Per-rik `(devata, rishi, chandas)` from sukta Info pages (preferred when present) |
+| `$REFERENCE_SNAPSHOTS/snapshots/vmlt-firebase/rigveda/{date}/data/{mm}/{mm}-{sss}.json` | Fallback `info.from`, `info.to`, `info.meters` |
 
 ## Outputs
 
