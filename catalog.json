@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "id": "sa_wikisource",
   "title": "Sanskrit Wikisource (विकिस्रोतः)",
-  "description": "Open-access Sanskrit texts from Wikimedia Wikisource: Rig Veda and Aṣṭādhyāyī.",
+  "description": "Open-access Sanskrit texts from Wikimedia Wikisource: Rig Veda, Aṣṭādhyāyī, and Taittirīya Saṃhitā.",
   "publications": [
     {
       "id": "rigveda",
       "title": "ऋग्वेदः",
       "vyviewUrl": "rigveda/rigveda.vyview",
-      "updated": 1788076997,
+      "updated": 1789339136,
       "description": "Rig Veda Samhita, Padapatha, and Sayanacharya Bhashya from Sanskrit Wikisource",
       "type": "work",
       "language": "sa",
@@ -18,8 +18,18 @@
       "id": "ashtadhyayi",
       "title": "अष्टाध्यायी",
       "vyviewUrl": "ashtadhyayi/ashtadhyayi.vyview",
-      "updated": 1788809385,
+      "updated": 1789241042,
       "description": "Pāṇini's Aṣṭādhyāyī (sūtra text and Hindi vyākhyā) from Sanskrit Wikisource",
+      "type": "work",
+      "language": "sa",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "id": "taittiriya-samhita",
+      "title": "तैत्तिरीयसंहिता",
+      "vyviewUrl": "taittiriya-samhita/taittiriya-samhita.vyview",
+      "updated": 1789280482,
+      "description": "Taittirīya Saṃhitā (accented) from Sanskrit Wikisource — Kṛṣṇa Yajurveda",
       "type": "work",
       "language": "sa",
       "license": "CC-BY-SA-4.0"
