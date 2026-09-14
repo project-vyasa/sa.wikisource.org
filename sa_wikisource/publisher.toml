@@ -3,7 +3,8 @@ identifier = "sa_wikisource"
 title = "Sanskrit Wikisource (विकिस्रोतः)"
 url = "https://sa.wikisource.org"
 catalog_url = "https://project-vyasa.github.io/sa.wikisource.org/catalog.json"
-description = "Open-access Sanskrit texts from Wikimedia Wikisource, beginning with Rig Veda Samhita, Padapatha, and Sayanacharya Bhashya."
+description = "Open-access Sanskrit texts from Wikimedia Wikisource: Rig Veda and Taittirīya Saṃhitā."
+content_themes = ["light", "dark", "parchment"]
 
 [curation]
 maintainer = "Project Vyasa Core Team"

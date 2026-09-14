@@ -1,0 +1,46 @@
+# Curated work ids for Sanskrit Wikisource publications in this publisher.
+# Wikisource portals (विकिस्रोतः:कृतयः, वर्गः:ग्रन्थाः) are incomplete;
+# this file is the source of truth for catalog / folder ids. Add a row before
+# choosing a new id. CLI script suffixes (`build:rv`, `build:tts`) are not these ids.
+
+[[work]]
+id = "rv"
+title_sa = "ऋग्वेदः"
+wikisource = "ऋग्वेदः"
+category = "वेदाः"
+status = "published"
+
+# Taittirīya (Kṛṣṇa Yajurveda) family. CLI suffixes: tts / tta / ttb / ttpr.
+# Do not allocate yajurveda, sri-rudram, or taittiriya-upanishad — those are
+# views/spans, not catalog ids. See notes/taittiriya.md.
+
+[[work]]
+id = "taittiriya-samhita"
+title_sa = "तैत्तिरीयसंहिता"
+wikisource = "तैत्तिरीयसंहिता-१-४"
+category = "वेदाः"
+status = "in_progress"
+editions = [
+  { id = "accented", title = "तैत्तिरीयसंहिता (सस्वरपाठः)" },
+]
+
+[[work]]
+id = "taittiriya-aranyaka"
+title_sa = "तैत्तिरीयारण्यकम्"
+wikisource = "तैत्तिरीय-आरण्यकम्"
+category = "वेदाः"
+status = "reserved"
+
+[[work]]
+id = "taittiriya-brahmana"
+title_sa = "तैत्तिरीयब्राह्मणम्"
+wikisource = "तैत्तिरीयब्राह्मणम् (विस्वरपाठः)"
+category = "वेदाः"
+status = "reserved"
+
+[[work]]
+id = "taittiriya-pratisakhya"
+title_sa = "तैत्तिरीयप्रातिशाख्यम्"
+wikisource = "तैत्तरीयप्रातिशाख्यम्"
+category = "वेदाङ्गम्"
+status = "reserved"

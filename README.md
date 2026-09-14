@@ -1,6 +1,13 @@
-# Project Vyasa — Sanskrit Wikisource (विकिस्रोतः) Rig Veda Pipeline
+# Project Vyasa — Sanskrit Wikisource (विकिस्रोतः) publisher
 
-This repository is a **Project Vyasa publisher**: it curates the **Rig Veda (ऋग्वेदः)** from [Sanskrit Wikisource](https://sa.wikisource.org) (विकिस्रोतः) and publishes a static **Vyasa** package (`catalog.json` + `.vyview`) for the viewer ecosystem.
+This repository is a **Project Vyasa publisher**: it curates Sanskrit texts from [Sanskrit Wikisource](https://sa.wikisource.org) (विकिस्रोतः) and publishes static **Vyasa** packages (`catalog.json` + `.vyview`) for the viewer ecosystem.
+
+Works in this publisher (ids in [`data/wikisource-works.toml`](data/wikisource-works.toml)):
+
+| Id | Work | Status |
+| :--- | :--- | :--- |
+| `rigveda` | Rig Veda (ऋग्वेदः) | published |
+| `taittiriya-samhita` | Taittirīya Saṃhitā (तैत्तिरीयसंहिता) | in progress |
 
 ## Attribution and thanks
 
@@ -10,7 +17,7 @@ The text in this publication comes from **Sanskrit Wikisource** — an open digi
 
 - **Source site:** [https://sa.wikisource.org](https://sa.wikisource.org)
 - **License:** [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) (Wikimedia content; see Wikisource for per-page details)
-- **Publisher packaging:** Project Vyasa (`sa_wikisource`) — tooling and `.vyview` assembly; **not** a new edition of the Veda
+- **Publisher packaging:** Project Vyasa (`sa_wikisource`) — tooling and `.vyview` assembly; **not** a new edition of the source texts
 
 If you use this publication, please credit **Sanskrit Wikisource / Wikimedia volunteers** and link to the original pages, in addition to any Project Vyasa attribution.
 
@@ -22,9 +29,9 @@ This is a **public publisher repo** with a small `main` branch and a **GitHub Pa
 
 | Location | Committed? | Contents |
 | :--- | :--- | :--- |
-| **`main`** | Yes | Pipeline code, `publisher.toml`, workspace scaffold (`vyasac.toml`, `context.vy`, templates), notes, audit summaries |
+| **`main`** | Yes | Pipeline code, `sa_wikisource/` (`publisher.toml`, shared `styles/`), workspace scaffold (`vyasac.toml`, `context.vy`, templates), notes, audit summaries |
 | **`main`** | No | `data/raw/` (HTML), `data/extracted/` (JSON), `content/*.vy`, `node_modules/`, local `build/` |
-| **GitHub Pages** (`gh-pages`) | Deploy only | `dist/catalog.json` + `dist/rigveda/rigveda.vyview` (~19 MB) — what viewers consume |
+| **GitHub Pages** (`gh-pages`) | Deploy only | `sa_wikisource/dist/catalog.json` + `.vyview` files — what viewers consume |
 | **GitHub Release** (optional) | Artifact | e.g. `rigveda-extracted.tar.zst` — avoids re-crawling Wikimedia for contributors |
 
 **Rebuild the corpus locally:**
@@ -41,7 +48,17 @@ bun run build:rv      # vyasac pack + publish → dist/
 bun run deploy        # push dist/ to GitHub Pages
 ```
 
-**Without crawling:** download the optional **release tarball** of extracted JSON (when published), then run `transform:rv` onward.
+Taittirīya Saṃhitā (`taittiriya-samhita`, CLI `:tts`) is a single accented-samhita stream (no padapāṭha/Sāyaṇa on Wikisource). Family plan (āraṇyaka, brāhmaṇa, Prātiśākhya): [`notes/taittiriya.md`](notes/taittiriya.md).
+
+```bash
+bun run crawl:tts       # 2 dump pages, idempotent
+bun run extract:tts
+bun run transform:tts
+bun run verify:tts
+bun run build:tts
+```
+
+**Without crawling Rig Veda:** download the optional **release tarball** of extracted JSON (when published), then run `transform:rv` onward.
 
 Canonical source remains **Sanskrit Wikisource**. We crawl politely (1 request at a time, 1.5s delay, descriptive User-Agent) and cache HTML only on your machine under `data/raw/`.
 
@@ -76,7 +93,7 @@ We extract these three layers into structured Vyasa streams, enrich anukramani f
 | 3 Transform | `bun run transform:rv` | `data/processed/rigveda/content/**/*.vy` (local only) |
 | 4 Enrich | `bun run enrich:rv` | `annotations/anukramani/`, `vocabulary/{entities,meters}.vy` |
 | 5 Verify | `bun run verify:rv` | `data/audit/rigveda-segments-latest.txt` |
-| Pack | `bun run build:rv` | `dist/catalog.json`, `dist/rigveda/rigveda.vyview` |
+| Pack | `bun run build:rv` / `bun run build:tts` | `sa_wikisource/dist/catalog.json`, `.vyview` files |
 | Deploy | `bun run deploy` | GitHub Pages |
 
 Requires `REFERENCE_SNAPSHOTS` for enrich (see `notes/enrich-rv.md`). `patch:rv` is deprecated.
@@ -89,7 +106,7 @@ Further reading: `notes/extract-schema.md`, `notes/variants-and-segments.md`, `n
 
 ## Architecture & code sharing
 
-When curating classical texts across publishers (`sri-aurobindo.co.in`, `sa.wikisource.org`, etc.), **crawl and extract stay per-repo** (unique DOM and courtesy rules). Shared schemas, philological utils, and patch/publish CLI are candidates for `@project-vyasa/*` packages. See `notes/architecture-and-sharing.md`.
+When curating classical texts across publishers (`sri-aurobindo.co.in`, `sa.wikisource.org`, etc.), **crawl URL schemes and DOM parsers stay per-corpus**. Host-level helpers (polite Wikimedia fetch, Devanagari numerals, `.vy` emission) live in `src/lib/` and are shared by Rig Veda and Taittirīya Saṃhitā. See `notes/architecture-and-sharing.md` and `notes/taittiriya.md`.
 
 ---
 
@@ -109,17 +126,28 @@ bun run build:rv
 bun run deploy
 ```
 
-## Local viewer testing (Caddy)
+## Publisher catalog (`sa_wikisource/`)
 
-This repo’s `dist/` is wired into the shared **vyasa-samples** Caddy dev server (same setup as Muktabodha Yogavasistha and Vyasa samples — avoids `sirv-cli` issues).
+Same layout as `vyasa-samples/vysamples/`: catalog identity lives in a folder named after `[publisher] identifier`, not at the repo root (pipeline `src/`, `notes/`, and `data/` stay siblings).
 
-1. Build the publication: `bun run build:rv`
-2. From `vyasa-samples/`, start Caddy:
-   ```bash
-   caddy run --config Caddyfile
-   ```
-3. In the Vyasa viewer, use local registry: `http://localhost:8080/registry.json`
-   - Rig Veda catalog: `http://localhost:8080/sa_wikisource/catalog.json`
+- `sa_wikisource/publisher.toml` — publisher identity
+- `sa_wikisource/styles/` — shared `publisher_css` (workspaces set `[publish] publisher_dir = "../../../sa_wikisource"`)
+- `sa_wikisource/dist/` — `vyasac publish` output (`catalog.json` + `.vyview`); deployed by `bun run deploy`
+- `sa_wikisource/Caddyfile` and `local-registry.json` — local catalog server (not deployed)
+
+## Local development (Caddy)
+
+Serve this publisher’s catalog locally (single-repo workflow):
+
+```bash
+caddy run --config sa_wikisource/Caddyfile
+```
+
+In the viewer Settings → Catalog Sources:
+- **Custom Registries:** `http://localhost:9100/registry.json`
+- **Custom Catalogs:** `http://localhost:9100/sa_wikisource/catalog.json`
+
+Open publications with `?catalog=http://localhost:9100/sa_wikisource/catalog.json`.
 
 **Consumers (production):** use the live `catalog.json` from GitHub Pages after `bun run deploy`.
 
@@ -131,6 +159,6 @@ This repo’s `dist/` is wired into the shared **vyasa-samples** Caddy dev serve
 | :--- | :--- |
 | Wikisource text | Volunteers of Sanskrit Wikisource; CC-BY-SA 4.0 |
 | Sayana commentary | As presented on Wikisource |
-| This repository | Project Vyasa publisher tooling; see `publisher.toml` |
+| This repository | Project Vyasa publisher tooling; see `sa_wikisource/publisher.toml` |
 
 Again: **thank you to the Wikisource volunteers** whose work makes this publication possible.

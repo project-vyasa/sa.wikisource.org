@@ -2,6 +2,7 @@ node_modules/
 .env
 .DS_Store
 dist/
+sa_wikisource/dist/
 build/
 
 # Downloaded HTML cache (idempotent; avoid re-crawling Wikimedia)

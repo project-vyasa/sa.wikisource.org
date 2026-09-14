@@ -3,7 +3,7 @@
 Handoff text for agents working in `vyasa-apps`, `vyasa`/`vyasav`, and `sa.wikisource.org`.  
 Prerequisite: explorer graph facet ingest (see [feature-request-explorer-graph-facets.md](./feature-request-explorer-graph-facets.md)) — assumed done or in progress.
 
-Test package: `sa.wikisource.org/dist/rigveda/rigveda.vyview` via `http://localhost:8080/sa_wikisource/catalog.json`.
+Test package: `sa.wikisource.org/sa_wikisource/dist/rigveda/rigveda.vyview` via `http://localhost:8080/sa_wikisource/catalog.json`.
 
 ---
 
@@ -120,3 +120,9 @@ Test package: `sa.wikisource.org/dist/rigveda/rigveda.vyview` via `http://localh
 4. **FR-2** — graph weave (viewer/vyasav)
 5. **FR-3** completion — drop denorm
 6. **FR-5** — optional manifest cleanup
+
+## FR-6 — Viewer: named spans + 4-level nav (TTS)
+
+**Repo:** `vyasa-apps` (viewer agent). Full text: [`vyasa-apps/notes/feature-request-named-spans-and-4level-nav.md`](../../vyasa-apps/notes/feature-request-named-spans-and-4level-nav.md).
+
+Explore `featured` suffix-collision (`2:1:4:5` vs container `4:5`); named spans in reader; review depth-4 `sidebar-items.ts`.

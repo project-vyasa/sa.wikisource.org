@@ -1,0 +1,27 @@
+[workspace]
+name = "taittiriya-samhita"
+title = "तैत्तिरीयसंहिता"
+description = "Taittirīya Saṃhitā (accented) from Sanskrit Wikisource — Kṛṣṇa Yajurveda"
+
+[catalog]
+type = "work"
+language = "sa"
+license = "CC-BY-SA-4.0"
+
+[publish]
+publisher_dir = "../../../sa_wikisource"
+
+[urn]
+path_schema = ["kanda", "prasna", "anuvaka"]
+corpus = "taittiriya-samhita"
+hierarchy = ["kanda", "prasna", "anuvaka", "mantra"]
+
+[build.default]
+layout = "sequence"
+target = "view"
+publisher_css = ["styles/indic-verse.css"]
+css = ["templates/html/theme.css", "templates/html/reading.css"]
+
+[streams.primary]
+path = "content/samhita"
+segment_separator = "\n"

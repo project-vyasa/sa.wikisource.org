@@ -16,9 +16,14 @@
     "extract:sample": "bun run src/extract/index.ts 1.1 1.185",
     "build:rv": "vyasac pack data/processed/rigveda && vyasac publish data/processed/rigveda",
     "build": "bun run build:rv",
-    "deploy": "gh-pages -d dist --dotfiles --nojekyll",
+    "deploy": "gh-pages -d sa_wikisource/dist --dotfiles --nojekyll",
     "transform:sample": "bun run src/transform/index.ts 1.1 1.185",
-    "test": "bun test src/lib",
+    "test": "bun test src",
+    "crawl:tts": "bun run src/crawl/tts.ts",
+    "extract:tts": "bun run src/extract/tts.ts",
+    "transform:tts": "bun run src/transform/tts.ts",
+    "verify:tts": "bun run src/verify/tts.ts",
+    "build:tts": "vyasac pack data/processed/taittiriya-samhita && vyasac publish data/processed/taittiriya-samhita",
     "audit:facet-noise": "bun run scripts/audit-facet-noise.ts"
   },
   "dependencies": {
