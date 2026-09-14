@@ -7,6 +7,7 @@ Works in this publisher (ids in [`data/wikisource-works.toml`](data/wikisource-w
 | Id | Work | Status |
 | :--- | :--- | :--- |
 | `rigveda` | Rig Veda (ऋग्वेदः) | published |
+| `ashtadhyayi` | Aṣṭādhyāyī (अष्टाध्यायी) | in progress |
 | `taittiriya-samhita` | Taittirīya Saṃhitā (तैत्तिरीयसंहिता) | in progress |
 
 ## Attribution and thanks
@@ -47,6 +48,18 @@ bun run verify:rv
 bun run build:rv      # vyasac pack + publish → dist/
 bun run deploy        # push dist/ to GitHub Pages
 ```
+
+Aṣṭādhyāyī (`ashtadhyayi`) does not need `REFERENCE_SNAPSHOTS`:
+
+```bash
+bun run crawl:aady      # ~19 pages, idempotent
+bun run extract:aady
+bun run transform:aady
+bun run verify:aady
+bun run build:aady
+```
+
+**Aṣṭādhyāyī** details: [`notes/ashtadhyayi.md`](notes/ashtadhyayi.md).
 
 Taittirīya Saṃhitā (`taittiriya-samhita`, CLI `:tts`) is a single accented-samhita stream (no padapāṭha/Sāyaṇa on Wikisource). Family plan (āraṇyaka, brāhmaṇa, Prātiśākhya): [`notes/taittiriya.md`](notes/taittiriya.md).
 
@@ -93,7 +106,7 @@ We extract these three layers into structured Vyasa streams, enrich anukramani f
 | 3 Transform | `bun run transform:rv` | `data/processed/rigveda/content/**/*.vy` (local only) |
 | 4 Enrich | `bun run enrich:rv` | `annotations/anukramani/`, `vocabulary/{entities,meters}.vy` |
 | 5 Verify | `bun run verify:rv` | `data/audit/rigveda-segments-latest.txt` |
-| Pack | `bun run build:rv` / `bun run build:tts` | `sa_wikisource/dist/catalog.json`, `.vyview` files |
+| Pack | `bun run build:rv` / `bun run build:aady` / `bun run build:tts` | `sa_wikisource/dist/catalog.json`, `.vyview` files |
 | Deploy | `bun run deploy` | GitHub Pages |
 
 Requires `REFERENCE_SNAPSHOTS` for enrich (see `notes/enrich-rv.md`). `patch:rv` is deprecated.
@@ -106,7 +119,7 @@ Further reading: `notes/extract-schema.md`, `notes/variants-and-segments.md`, `n
 
 ## Architecture & code sharing
 
-When curating classical texts across publishers (`sri-aurobindo.co.in`, `sa.wikisource.org`, etc.), **crawl URL schemes and DOM parsers stay per-corpus**. Host-level helpers (polite Wikimedia fetch, Devanagari numerals, `.vy` emission) live in `src/lib/` and are shared by Rig Veda and Taittirīya Saṃhitā. See `notes/architecture-and-sharing.md` and `notes/taittiriya.md`.
+When curating classical texts across publishers (`sri-aurobindo.co.in`, `sa.wikisource.org`, etc.), **crawl URL schemes and DOM parsers stay per-corpus**. Host-level helpers (polite Wikimedia fetch, Devanagari numerals, `.vy` emission) live in `src/lib/` and are shared by Rig Veda, Aṣṭādhyāyī, and Taittirīya Saṃhitā. See `notes/architecture-and-sharing.md`, `notes/ashtadhyayi.md`, and `notes/taittiriya.md`.
 
 ---
 

@@ -1,7 +1,8 @@
 # Curated work ids for Sanskrit Wikisource publications in this publisher.
 # Wikisource portals (विकिस्रोतः:कृतयः, वर्गः:ग्रन्थाः) are incomplete;
 # this file is the source of truth for catalog / folder ids. Add a row before
-# choosing a new id. CLI script suffixes (`build:rv`, `build:tts`) are not these ids.
+# choosing a new id. Do not allocate `asht` or `panini`. CLI script suffixes
+# (`build:rv`, `build:aady`) are not these ids.
 
 [[work]]
 id = "rv"
@@ -9,6 +10,42 @@ title_sa = "ऋग्वेदः"
 wikisource = "ऋग्वेदः"
 category = "वेदाः"
 status = "published"
+
+[[work]]
+id = "ashtadhyayi"
+title_sa = "अष्टाध्यायी"
+wikisource = "अष्टाध्यायी"
+category = "व्याकरणम्"
+status = "in_progress"
+editions = [
+  { id = "mula", title = "अष्टाध्यायी" },
+  { id = "hi_vyakhya", title = "अष्टाध्यायी हिन्दी व्याख्या सहितम्" },
+]
+
+[[work]]
+id = "ashtangahrdaya"
+title_sa = "अष्टाङ्गहृदयम्"
+status = "reserved"
+
+[[work]]
+id = "ashtavakragita"
+title_sa = "अष्टावक्रगीता"
+status = "reserved"
+
+[[work]]
+id = "dhatupatha"
+title_sa = "पाणिनीयधातुपाठः"
+status = "reserved"
+
+[[work]]
+id = "ganapatha"
+title_sa = "अष्टाध्यायी-गणपाठः"
+status = "reserved"
+
+[[work]]
+id = "paniniya-siksa"
+title_sa = "पाणिनीयशिक्षा"
+status = "reserved"
 
 # Taittirīya (Kṛṣṇa Yajurveda) family. CLI suffixes: tts / tta / ttb / ttpr.
 # Do not allocate yajurveda, sri-rudram, or taittiriya-upanishad — those are

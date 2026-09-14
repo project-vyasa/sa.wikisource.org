@@ -1,0 +1,35 @@
+[workspace]
+name = "ashtadhyayi"
+title = "अष्टाध्यायी"
+description = "Pāṇini's Aṣṭādhyāyī (sūtra text and Hindi vyākhyā) from Sanskrit Wikisource"
+
+[catalog]
+type = "work"
+language = "sa"
+license = "CC-BY-SA-4.0"
+
+[publish]
+publisher_dir = "../../../sa_wikisource"
+
+[urn]
+path_schema = ["adhyaya", "pada"]
+corpus = "ashtadhyayi"
+hierarchy = ["adhyaya", "pada", "sutra"]
+
+[build.default]
+layout = "sequence"
+target = "view"
+publisher_css = ["styles/indic-verse.css"]
+css = ["templates/html/theme.css", "templates/html/reading.css"]
+
+[streams.primary]
+path = "content/sutra"
+segment_separator = "\n"
+
+[streams.vyakhya]
+path = "content/vyakhya"
+segment_separator = "\n"
+
+[streams.udaharana]
+path = "content/udaharana"
+segment_separator = "\n"
