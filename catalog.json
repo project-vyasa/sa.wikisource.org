@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "id": "sa_wikisource",
   "title": "Sanskrit Wikisource (विकिस्रोतः)",
-  "description": "Open-access Sanskrit texts from Wikimedia Wikisource: Rig Veda, Aṣṭādhyāyī, and the Taittirīya (Kṛṣṇa Yajurveda) family.",
+  "description": "Open-access Sanskrit texts from Wikimedia Wikisource: Rig Veda, Atharvaveda (Śaunaka), Sāmaveda (Kauthuma), Aṣṭādhyāyī, and the Taittirīya (Kṛṣṇa Yajurveda) family.",
   "publications": [
     {
       "id": "rigveda",
@@ -60,6 +60,26 @@
       "vyviewUrl": "taittiriya-pratisakhya/taittiriya-pratisakhya.vyview",
       "updated": 1789967860,
       "description": "Taittirīya-Prātiśākhya (sūtra text) from Sanskrit Wikisource",
+      "type": "work",
+      "language": "sa",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "id": "kauthuma-samhita",
+      "title": "सामवेदः (कौथुमीया)",
+      "vyviewUrl": "kauthuma-samhita/kauthuma-samhita.vyview",
+      "updated": 1790143822,
+      "description": "Kauthuma Sāmaveda saṃhitā (accented) from Sanskrit Wikisource",
+      "type": "work",
+      "language": "sa",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "id": "atharvaveda-saunaka",
+      "title": "अथर्ववेदः (शौनक)",
+      "vyviewUrl": "atharvaveda-saunaka/atharvaveda-saunaka.vyview",
+      "updated": 1790178368,
+      "description": "Atharvaveda Śaunaka saṃhitā from Sanskrit Wikisource consolidated kāṇḍa pages",
       "type": "work",
       "language": "sa",
       "license": "CC-BY-SA-4.0"
