@@ -9,6 +9,9 @@ Works in this publisher (ids in [`data/wikisource-works.toml`](data/wikisource-w
 | `rigveda` | Rig Veda (ऋग्वेदः) | published |
 | `ashtadhyayi` | Aṣṭādhyāyī (अष्टाध्यायी) | in progress |
 | `taittiriya-samhita` | Taittirīya Saṃhitā (तैत्तिरीयसंहिता) | in progress |
+| `taittiriya-aranyaka` | Taittirīya Āraṇyaka (तैत्तिरीयारण्यकम्) | in progress |
+| `taittiriya-brahmana` | Taittirīya Brāhmaṇa (तैत्तिरीयब्राह्मणम्) | in progress |
+| `taittiriya-pratisakhya` | Taittirīya-Prātiśākhya (तैत्तिरीयप्रातिशाख्यम्) | in progress |
 
 ## Attribution and thanks
 
@@ -61,14 +64,15 @@ bun run build:aady
 
 **Aṣṭādhyāyī** details: [`notes/ashtadhyayi.md`](notes/ashtadhyayi.md).
 
-Taittirīya Saṃhitā (`taittiriya-samhita`, CLI `:tts`) is a single accented-samhita stream (no padapāṭha/Sāyaṇa on Wikisource). Family plan (āraṇyaka, brāhmaṇa, Prātiśākhya): [`notes/taittiriya.md`](notes/taittiriya.md).
+Taittirīya family (`taittiriya-samhita` / `:tts`, `taittiriya-aranyaka` / `:tta`, `taittiriya-brahmana` / `:ttb`, `taittiriya-pratisakhya` / `:ttpr`). Named spans (Rudram, Camakam, Śikṣāvallī) are annotations, not extra catalog ids.
+
+The Wikisource āraṇyaka is an **8-praśna** recension: Śikṣāvallī is praśna 5 (not printed TA 7); Brahmānanda and Bhṛgu are absent. The brāhmaṇa dump ends at **3.9**. Reader-facing maps and gaps: [`data/processed/taittiriya-aranyaka/README.md`](data/processed/taittiriya-aranyaka/README.md), [`data/processed/taittiriya-brahmana/README.md`](data/processed/taittiriya-brahmana/README.md). Ingest notes: [`notes/taittiriya.md`](notes/taittiriya.md).
 
 ```bash
-bun run crawl:tts       # 2 dump pages, idempotent
-bun run extract:tts
-bun run transform:tts
-bun run verify:tts
-bun run build:tts
+bun run crawl:tts && bun run extract:tts && bun run transform:tts && bun run verify:tts && bun run build:tts
+bun run pipeline:tta && bun run build:tta
+bun run pipeline:ttb && bun run build:ttb
+bun run pipeline:ttpr && bun run build:ttpr
 ```
 
 **Without crawling Rig Veda:** download the optional **release tarball** of extracted JSON (when published), then run `transform:rv` onward.
@@ -106,7 +110,7 @@ We extract these three layers into structured Vyasa streams, enrich anukramani f
 | 3 Transform | `bun run transform:rv` | `data/processed/rigveda/content/**/*.vy` (local only) |
 | 4 Enrich | `bun run enrich:rv` | `annotations/anukramani/`, `vocabulary/{entities,meters}.vy` |
 | 5 Verify | `bun run verify:rv` | `data/audit/rigveda-segments-latest.txt` |
-| Pack | `bun run build:rv` / `bun run build:aady` / `bun run build:tts` | `sa_wikisource/dist/catalog.json`, `.vyview` files |
+| Pack | `bun run build:rv` / `build:aady` / `build:tts` / `build:tta` / `build:ttb` / `build:ttpr` | `sa_wikisource/dist/catalog.json`, `.vyview` files |
 | Deploy | `bun run deploy` | GitHub Pages |
 
 Requires `REFERENCE_SNAPSHOTS` for enrich (see `notes/enrich-rv.md`). `patch:rv` is deprecated.
@@ -119,7 +123,7 @@ Further reading: `notes/extract-schema.md`, `notes/variants-and-segments.md`, `n
 
 ## Architecture & code sharing
 
-When curating classical texts across publishers (`sri-aurobindo.co.in`, `sa.wikisource.org`, etc.), **crawl URL schemes and DOM parsers stay per-corpus**. Host-level helpers (polite Wikimedia fetch, Devanagari numerals, `.vy` emission) live in `src/lib/` and are shared by Rig Veda, Aṣṭādhyāyī, and Taittirīya Saṃhitā. See `notes/architecture-and-sharing.md`, `notes/ashtadhyayi.md`, and `notes/taittiriya.md`.
+When curating classical texts across publishers (`sri-aurobindo.co.in`, `sa.wikisource.org`, etc.), **crawl URL schemes and DOM parsers stay per-corpus**. Host-level helpers (polite Wikimedia fetch, Devanagari numerals, `.vy` emission) live in `src/lib/` and are shared by Rig Veda, Aṣṭādhyāyī, and the Taittirīya family. See `notes/architecture-and-sharing.md`, `notes/ashtadhyayi.md`, and `notes/taittiriya.md`.
 
 ---
 

@@ -1,0 +1,27 @@
+[workspace]
+name = "taittiriya-brahmana"
+title = "तैत्तिरीयब्राह्मणम्"
+description = "Taittirīya Brāhmaṇa from Sanskrit Wikisource (accented). Covers kāṇḍas 1.1–1.8, 2.1–2.8, and 3.1–3.9. Praśnas 3.10–3.12 found in some editions are not in this dump."
+
+[catalog]
+type = "work"
+language = "sa"
+license = "CC-BY-SA-4.0"
+
+[publish]
+publisher_dir = "../../../sa_wikisource"
+
+[urn]
+path_schema = ["kanda", "prasna", "anuvaka"]
+corpus = "taittiriya-brahmana"
+hierarchy = ["kanda", "prasna", "anuvaka", "mantra"]
+
+[build.default]
+layout = "sequence"
+target = "view"
+publisher_css = ["styles/indic-verse.css"]
+css = ["templates/html/theme.css", "templates/html/reading.css"]
+
+[streams.primary]
+path = "content/samhita"
+segment_separator = "\n"

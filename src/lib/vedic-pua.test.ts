@@ -30,6 +30,13 @@ describe("cleanVedicDumpText", () => {
       "बन्धुः ॥",
     );
   });
+
+  it("moves a Vedic tone after anusvara onto the letter so it does not render as a dotted circle", () => {
+    // Dump: ष + anudātta + PUA anusvara + anudātta  →  ष॒ं (not ष॒◌॒)
+    expect(cleanVedicDumpText("इष॒\uE001॒ सन्ध॑त्तं॒")).toBe("इष॒ं सन्ध॑त्त॒ं");
+    expect(cleanVedicDumpText("देवाः॑")).toBe("देवा॑ः");
+    expect(cleanVedicDumpText("\u25CC॒ तन्मे")).toBe("तन्मे");
+  });
 });
 
 describe("isLatinGarbage", () => {

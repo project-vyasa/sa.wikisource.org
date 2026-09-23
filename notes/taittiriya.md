@@ -1,6 +1,6 @@
 # Taittirīya family (Kṛṣṇa Yajurveda)
 
-Catalog ids are full names (`taittiriya-samhita`, …). CLI suffixes are internal only: **`tts`**, later **`tta`**, **`ttb`**, **`ttpr`**. Do not publish a catalog id `yajurveda` or a cryptic `tts`.
+Catalog ids are full names (`taittiriya-samhita`, …). CLI suffixes are internal only: **`tts`**, **`tta`**, **`ttb`**, **`ttpr`**. Do not publish a catalog id `yajurveda` or a cryptic `tts`.
 
 This note records the ingest investigation, answers on hierarchy/recension, GitHub size, and the layered “view into the corpus” plan (named spans, not copied fragments).
 
@@ -24,9 +24,9 @@ Taittirīya is the living Kṛṣṇa śākhā we are packing first. Maitrāya�
 | CLI | Catalog id | Wikisource source of truth | Status |
 | :--- | :--- | :--- | :--- |
 | `tts` | `taittiriya-samhita` | Accented dumps [संहिता-१-४](https://sa.wikisource.org/wiki/तैत्तिरीयसंहिता-१-४) and [संहिता-५-७](https://sa.wikisource.org/wiki/तैत्तिरीयसंहिता-५-७) | **in progress** |
-| `tta` | `taittiriya-aranyaka` | Accented dump [तैत्तिरीय-आरण्यकम्](https://sa.wikisource.org/wiki/तैत्तिरीय-आरण्यकम्) | reserved (next after TTS) |
-| `ttb` | `taittiriya-brahmana` | Visvara kāṇḍa/prapāṭhaka pages | reserved |
-| `ttpr` | `taittiriya-pratisakhya` | [तैत्तरीयप्रातिशाख्यम्](https://sa.wikisource.org/wiki/तैत्तरीयप्रातिशाख्यम्) (~19k chars of sūtras) | reserved |
+| `tta` | `taittiriya-aranyaka` | Accented dump [तैत्तिरीय-आरण्यकम्](https://sa.wikisource.org/wiki/तैत्तिरीय-आरण्यकम्) | **in progress** |
+| `ttb` | `taittiriya-brahmana` | Accented dump [तैत्तिरीयब्राह्मणम्](https://sa.wikisource.org/wiki/तैत्तिरीयब्राह्मणम्) | **in progress** |
+| `ttpr` | `taittiriya-pratisakhya` | [तैत्तरीयप्रातिशाख्यम्](https://sa.wikisource.org/wiki/तैत्तरीयप्रातिशाख्यम्) (~19k chars of sūtras) | **in progress** |
 
 **Do not allocate** `taittiriya-upanishad` or `sri-rudram` as corpora. Those are **spans** of TTA / TTS (below).
 
@@ -108,12 +108,15 @@ Layer 3 in the ingest plan (“don’t merge Śukla recensions into this publica
 
 Śrī Rudram and the Taittirīya Upaniṣad **are** part of this family:
 
-| Popular name | Canonical span |
+| Popular name | Canonical span in this dump |
 | :--- | :--- |
 | Śrī Rudram / Namakam / Śatarudrīya | **TTS 4.5** |
 | Camakam | **TTS 4.7** |
-| Taittirīya Upaniṣad (Śikṣā, Brahmānanda, Bhṛgu vallīs) | **TTA 7–9** |
+| Śikṣāvallī (TU 1) | **TTA 5** (dump header *तैत्तिरीयोपनिषत्*) |
+| Mahānārāyaṇa Upaniṣad | **TTA 6** |
 | Puruṣa sūkta (Taittirīya) | **TTA 3.12** |
+
+Andhra printed TA numbers Śikṣā/Brahmānanda/Bhṛgu as 7–9 and MNU as 10. This Wikisource dump is an 8-praśna recension: Śikṣā is praśna 5, MNU is praśna 6, Brahmānanda and Bhṛgu are **absent**. Do not invent those vallīs from unaccented standalone pages.
 
 **Do not** clone those spans into a second `.vyview` with copied leaves. That splits URNs and diverges on re-extract.
 
@@ -132,11 +135,11 @@ Nothing of the corpus body is committed (see root `.gitignore`): `data/raw/`, `d
 | Artifact | Where | Scale |
 | :--- | :--- | :--- |
 | TTS accented dumps | `data/raw/` (ignored) | ~850 KB wikitext (2 pages) |
-| TTA dump | ignored | same order of magnitude |
-| TTB visvara | ignored | tens of pages, still small vs RV’s ~1028 HTML suktas |
+| TTA dump | ignored | ~210 KB wikitext, 8 praśnas |
+| TTB dump | ignored | ~600 KB wikitext, 25 praśnas (1.1–3.9) |
 | TPr | ignored | ~19 KB |
 | Packed `.vyview` | `gh-pages` / `sa_wikisource/dist` | TTS packed at **1.2 MB** (2026-09-12). Full family should stay a few MB. |
-| GitHub repo | `main` | stays a small tooling repo |
+| GitHub repo | `main` | tooling + configs only. Tracked tree ~0.3 MB. `.git` is ~100 MB from historical Rig Veda `.vyview` blobs — do not rewrite history unless asked. GitHub hard limits: 100 MB/file, ~1 GB repo. |
 
 RV is the size outlier (crawl time and packed viewer), and it already lives here. Adding saṃhitā + āraṇyaka + brāhmaṇa + Prātiśākhya does **not** threaten GitHub’s repo or Pages budgets as long as we keep raw/extracted/content gitignored. Optional release tarballs (like RV extracted JSON) are for contributors, not `main`.
 
@@ -174,15 +177,41 @@ Featured titles written on extract/transform:
 
 ---
 
-## 7. Later family work (not this change)
+## 7. TTA / TTB / TTPr pipelines (2026-09-20)
 
-1. **TTA** — same dump parser if the āraṇyaka uses `P.A.M` or `K.P.A.M`; featured spans for TU 7–9 and Puruṣa sūkta 3.12.
-2. **TTB** — visvara pagination; expect a similar kāṇḍa/prapāṭhaka/anuvāka tree, likely unaccented unless an accented dump appears.
-3. **TTPr** — short sūtra work (adhyāya → sūtra), closer to Aṣṭādhyāyī mūla than to TTS. Link from TTS/TTA via annotations, do not splice into the saṃhitā stream.
+```bash
+bun run pipeline:tta && bun run build:tta
+bun run pipeline:ttb && bun run build:ttb
+bun run pipeline:ttpr && bun run build:ttpr
+```
 
-Verify TTS against 1.1.1 opening and 4.5 Rudram before calling the first publication done.
+Bodies stay gitignored (`data/raw/`, `data/extracted/`, `data/processed/*/content/`, `annotations/`, `sa_wikisource/dist/`).
 
-Packed 2026-09-12 without the stdlib `m`→`marker` alias (leaf command is `mantra`).
+### 7.1 TTA — 3-level `prasna:anuvaka:mantra`
+
+Accented dump [तैत्तिरीय-आरण्यकम्](https://sa.wikisource.org/wiki/तैत्तिरीय-आरण्यकम्) is an **8-praśna** recension (not Ānandāśrama’s 10 prapāṭhakas).
+
+| Dump | Notes |
+| :--- | :--- |
+| Praśnas 1–2, 4–8 | 3-part ids `P.A.M` |
+| Praśna 3 | 2-part ids `A.M` between 2.19 and 4.0.0; extract promotes them to praśna 3 |
+| Praśna 5 | Dump header *तैत्तिरीयोपनिषत्* — **Śikṣāvallī** (`शन्नो मित्रः` at 5.1.1). Featured `sikshavalli` as `"5:0:0"` |
+| Praśna 6 | Dump header *महानारायणोपनिषत्*. Featured `mahanarayana` as `"6:0:0"` |
+| 3.12 | Puruṣa sūkta (`सहस्रशीर्षा पुरुषः`). Featured `purusha_sukta` as `"3:12:0"` |
+
+Spine: `content/samhita/{prasna}/{anuvaka}.vy`. `path_schema = ["prasna", "anuvaka"]`. First extract (2026-09-20): **8 praśnas, 217 anuvākas, 554 mantras**. Packed **392 KB**.
+
+### 7.2 TTB — same 4-part dump as TTS
+
+Accented dump [तैत्तिरीयब्राह्मणम्](https://sa.wikisource.org/wiki/तैत्तिरीयब्राह्मणम्): `K.P.A.M`, kāṇḍa **1.1–1.8, 2.1–2.8, 3.1–3.9**. Visvara continues 3.10–3.12 unaccented — not this source of truth. Trailing Devanagari glued to an id (`1.1.1.2१`) is stripped by the shared dump parser.
+
+Spine: `content/samhita/{kanda}/{prasna}/{anuvaka}.vy`. First extract (2026-09-20): **3 kāṇḍas, 25 praśnas, 308 anuvākas, 1659 mantras**. Packed **836 KB**.
+
+### 7.3 TTPr — adhyāya → sūtra
+
+[तैत्तरीयप्रातिशाख्यम्](https://sa.wikisource.org/wiki/तैत्तरीयप्रातिशाख्यम्) (Wikisource spelling, one त): 24 `==…अध्यायः==` sections, sūtras numbered inline in Devanagari. Dump counters are noisy (`४२` for ४८, etc.); extract **splits on those numbers in source order** and assigns sequential leaf ids. `path_schema = ["adhyaya"]`, leaf command `sutra` (`s` alias). No vyākhyā stream. First extract (2026-09-20): **24 adhyāyas, 543 sūtras**. Packed **184 KB**.
+
+Packed TTS (2026-09-12) used leaf command `mantra` (no stdlib `m`→`marker` alias). TTA/TTB do the same.
 
 ---
 
@@ -195,6 +224,8 @@ Packed data was fine; the empty anuvākas and wrong sidebar groups were viewer b
 | Anuvāka 1.1.1 (and other 1-mantra units) blank | Viewport `LIMIT = matchingUrns.length`. Packer inserts empty `:0` html_blocks; weave then drops placeholders, so LIMIT 1 returns only the header. | `viewportLeafFetchLimit` over-fetches (`n*2+4`) in `vyasa-apps` `urn-renderer.ts`. Rebuild the viewer, not only the `.vyview`. |
 | Kāṇḍa 2 sidebar lists **Anuvāka 1.2.y** | `buildSidebarItems` looked up `titles[parentPart]`. For `2:1:1`, `parentPart === "1"` collided with kāṇḍa 1. | Group by full parent/grandparent ids: `Kāṇḍa 2 (Prasna 1)`. |
 | Tofu boxes, trailing `[2]` | Dump uses Sanskrit 2003 PUA (`F176` svarita, `E001`/`F156` anusvara, `F131` visarga). `[N]` is a running khaṇḍa number across the praśna. | `src/lib/vedic-pua.ts` maps PUA, strips `[N]`, drops leftover PUA, skips English “Write a description” headers. Re-extract. |
+| Dotted circles in TTB 1.1.1 (and elsewhere) | After mapping PUA anusvara, Vedic anudātta/udātta sit *after* `ं`/`ः`. Noto has no glyph for that cluster, so it paints the empty-slot circle. | `reattachVedicTones` moves the tone in front of anusvara/visarga (`त्तं॒` → `त्त॒ं`). Re-extract. |
+| Dotted circles remaining after reattach (2026-09-20) | Google Fonts **Noto Sans Devanagari** ships U+0951/U+0952 but not mark-to-base lookups. Every pitch mark then paints as a dotted circle, even on a normal letter (`ब्रह्म॒`). | Publisher `indic-verse.css` prefers OS Devanagari (`ITF Devanagari`, `Kohinoor Devanagari`, `Nirmala UI`, …) then Noto Serif Devanagari. Re-pack (CSS is inside the `.vyview`). |
 | Yajus looks like one mashed paragraph | Leaf class is `.mantra`; publisher CSS listed `.rik` / `.sutra` only. | Add `.mantra` to `indic-verse.css`. `break_after = "।॥"` already in TTS `context.vy`. |
 | Featured (Rudram / Camakam) not highlighting | Leaf ranges do not expand. Short `"4:5"` is right-aligned by `UrnEncoder` to `0:4:5`. | Annotate padded `"4:5:0:0"` / `"4:7:0:0"`. Surface is **Explore** (`attr:featured`), not the reader sidebar. |
 

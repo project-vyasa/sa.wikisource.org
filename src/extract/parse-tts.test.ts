@@ -38,6 +38,12 @@ describe("parseDumpRecords", () => {
     expect(cue?.body).toContain("ंशत्");
     expect(cue?.body).not.toMatch(/[\uE000-\uF8FF]/u);
   });
+
+  it("accepts a trailing Devanagari digit glued to a 4-part id", () => {
+    const recs = parseDumpRecords("1.1.1.2१\nअ॒ग्निर्\n");
+    expect(recs).toHaveLength(1);
+    expect(recs[0]).toMatchObject({ kanda: 1, prasna: 1, anuvaka: 1, mantra: 2 });
+  });
 });
 
 describe("groupPrasnas", () => {

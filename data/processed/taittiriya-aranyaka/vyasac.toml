@@ -1,0 +1,27 @@
+[workspace]
+name = "taittiriya-aranyaka"
+title = "तैत्तिरीयारण्यकम्"
+description = "Taittirīya Āraṇyaka from Sanskrit Wikisource (accented, 8 praśnas). Śikṣāvallī is praśna 5; Mahānārāyaṇa is praśna 6; Puruṣa sūkta is 3.12. The Brahmānanda and Bhṛgu vallīs of 10-prapāṭhaka printed editions are not in this source."
+
+[catalog]
+type = "work"
+language = "sa"
+license = "CC-BY-SA-4.0"
+
+[publish]
+publisher_dir = "../../../sa_wikisource"
+
+[urn]
+path_schema = ["prasna", "anuvaka"]
+corpus = "taittiriya-aranyaka"
+hierarchy = ["prasna", "anuvaka", "mantra"]
+
+[build.default]
+layout = "sequence"
+target = "view"
+publisher_css = ["styles/indic-verse.css"]
+css = ["templates/html/theme.css", "templates/html/reading.css"]
+
+[streams.primary]
+path = "content/samhita"
+segment_separator = "\n"

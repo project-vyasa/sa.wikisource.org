@@ -7,7 +7,9 @@ import {
   type ExtractedPrasna,
 } from "../schema/tts";
 
-const ID_LINE = /^(\d{1,2})\.(\d{1,2})\.(\d{1,2})\.(\d{1,2})\s*$/;
+const ID_LINE_4 = /^(\d{1,2})\.(\d{1,2})\.(\d{1,2})\.(\d{1,2})[०-९]*\s*$/;
+const ID_LINE_3 = /^(\d{1,2})\.(\d{1,2})\.(\d{1,2})[०-९]*\s*$/;
+const ID_LINE_2 = /^(\d{1,2})\.(\d{1,2})[०-९]*\s*$/;
 
 export function readWikitextFromParseJson(raw: string): string {
   const parsed = JSON.parse(raw) as {
@@ -46,8 +48,23 @@ export interface DumpRecord {
   body: string;
 }
 
-/** Split accented dump wikitext on `K.P.A.M` line ids. */
-export function parseDumpRecords(wikitext: string): DumpRecord[] {
+export interface ParseDumpOpts {
+  /** TTS / TTB dumps are 4-part `K.P.A.M`. TTA is 3-part `P.A.M`. */
+  parts?: 3 | 4;
+  /**
+   * TTA praśna 3 is dumped as 2-part `A.M` between 2.19 and 4.0.0.
+   * Those ids are promoted to this praśna (default 3).
+   */
+  twoPartPrasna?: number;
+}
+
+/** Split accented dump wikitext on line ids. */
+export function parseDumpRecords(
+  wikitext: string,
+  opts: ParseDumpOpts = {},
+): DumpRecord[] {
+  const parts = opts.parts ?? 4;
+  const twoPartPrasna = opts.twoPartPrasna ?? 3;
   const text = unwrapPre(wikitext);
   const lines = text.split(/\n/);
   const records: DumpRecord[] = [];
@@ -63,17 +80,45 @@ export function parseDumpRecords(wikitext: string): DumpRecord[] {
   };
 
   for (const line of lines) {
-    const m = ID_LINE.exec(line.trim());
-    if (m) {
-      flush();
-      current = {
-        kanda: Number(m[1]),
-        prasna: Number(m[2]),
-        anuvaka: Number(m[3]),
-        mantra: Number(m[4]),
-        body: "",
-      };
-      continue;
+    const trimmed = line.trim();
+    if (parts === 4) {
+      const m = ID_LINE_4.exec(trimmed);
+      if (m) {
+        flush();
+        current = {
+          kanda: Number(m[1]),
+          prasna: Number(m[2]),
+          anuvaka: Number(m[3]),
+          mantra: Number(m[4]),
+          body: "",
+        };
+        continue;
+      }
+    } else {
+      const m3 = ID_LINE_3.exec(trimmed);
+      if (m3) {
+        flush();
+        current = {
+          kanda: 0,
+          prasna: Number(m3[1]),
+          anuvaka: Number(m3[2]),
+          mantra: Number(m3[3]),
+          body: "",
+        };
+        continue;
+      }
+      const m2 = ID_LINE_2.exec(trimmed);
+      if (m2) {
+        flush();
+        current = {
+          kanda: 0,
+          prasna: twoPartPrasna,
+          anuvaka: Number(m2[1]),
+          mantra: Number(m2[2]),
+          body: "",
+        };
+        continue;
+      }
     }
     if (current) chunks.push(line);
   }

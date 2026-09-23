@@ -7,6 +7,10 @@
  * F176 spacing svarita, E001/F156 anusvara, F131 visarga, E007 rare
  * floating udatta. F184/F1A2 appear only in English "Write a
  * description" header corruption.
+ *
+ * After mapping, Vedic tones (U+0951/U+0952) that sit *after* anusvara or
+ * visarga have no letter to attach to. Noto then paints a dotted circle
+ * (the empty-slot glyph). Move those tones in front of the sign.
  */
 
 const PUA_MAP: Record<string, string> = {
@@ -22,6 +26,11 @@ const PUA_RE = /[\uE000-\uF8FF]/gu;
 /** Wikisource running khaṇḍa number across the praśna, not the mantra id. */
 const KHANDA_NUM = /\s*\[\d+\]\s*/gu;
 const WIKI_LINK = /\[\[.*?\]\]/gsu;
+
+const TONE_AFTER_SIGN = /([ंःँ]+)([॒॑]+)/gu;
+const DUP_TONE = /([॒॑])\1+/gu;
+const ORPHAN_TONE = /(^|[\s।॥])[॒॑]+/gu;
+const DOTTED_CIRCLE = /\u25CC/gu;
 
 export function mapVedicPua(text: string): string {
   let out = "";
@@ -40,6 +49,22 @@ export function dropLeftoverPua(text: string): string {
   return text.replace(PUA_RE, "");
 }
 
+/**
+ * Attach Vedic udātta/anudātta to the preceding letter instead of
+ * leaving them after anusvara/visarga (which renders as ◌ placeholders).
+ */
+export function reattachVedicTones(text: string): string {
+  let out = text.replace(DOTTED_CIRCLE, "");
+  let prev = "";
+  while (out !== prev) {
+    prev = out;
+    out = out.replace(TONE_AFTER_SIGN, "$2$1");
+  }
+  out = out.replace(DUP_TONE, "$1");
+  out = out.replace(ORPHAN_TONE, "$1");
+  return out;
+}
+
 /** True when a dump block is English editor-placeholder, not Sanskrit. */
 export function isLatinGarbage(text: string): boolean {
   const latin = (text.match(/[A-Za-z]/g) ?? []).length;
@@ -49,6 +74,6 @@ export function isLatinGarbage(text: string): boolean {
 
 export function cleanVedicDumpText(text: string): string {
   return stripTrailingKhandaNumber(
-    dropLeftoverPua(mapVedicPua(text)).replace(WIKI_LINK, " "),
+    reattachVedicTones(dropLeftoverPua(mapVedicPua(text))).replace(WIKI_LINK, " "),
   );
 }

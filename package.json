@@ -1,7 +1,7 @@
 {
   "name": "@project-vyasa/sa-wikisource-org",
   "version": "0.1.0",
-  "description": "Project Vyasa data pipeline and publication for Rig Veda from Sanskrit Wikisource (sa.wikisource.org)",
+  "description": "Project Vyasa data pipeline and publication for Sanskrit Wikisource texts (Rig Veda, Aṣṭādhyāyī, Taittirīya family)",
   "private": true,
   "type": "module",
   "scripts": {
@@ -29,6 +29,24 @@
     "transform:tts": "bun run src/transform/tts.ts",
     "verify:tts": "bun run src/verify/tts.ts",
     "build:tts": "vyasac pack data/processed/taittiriya-samhita && vyasac publish data/processed/taittiriya-samhita",
+    "crawl:tta": "bun run src/crawl/tta.ts",
+    "extract:tta": "bun run src/extract/tta.ts",
+    "transform:tta": "bun run src/transform/tta.ts",
+    "verify:tta": "bun run src/verify/tta.ts",
+    "build:tta": "vyasac pack data/processed/taittiriya-aranyaka && vyasac publish data/processed/taittiriya-aranyaka",
+    "crawl:ttb": "bun run src/crawl/ttb.ts",
+    "extract:ttb": "bun run src/extract/ttb.ts",
+    "transform:ttb": "bun run src/transform/ttb.ts",
+    "verify:ttb": "bun run src/verify/ttb.ts",
+    "build:ttb": "vyasac pack data/processed/taittiriya-brahmana && vyasac publish data/processed/taittiriya-brahmana",
+    "crawl:ttpr": "bun run src/crawl/ttpr.ts",
+    "extract:ttpr": "bun run src/extract/ttpr.ts",
+    "transform:ttpr": "bun run src/transform/ttpr.ts",
+    "verify:ttpr": "bun run src/verify/ttpr.ts",
+    "build:ttpr": "vyasac pack data/processed/taittiriya-pratisakhya && vyasac publish data/processed/taittiriya-pratisakhya",
+    "pipeline:tta": "bun run crawl:tta && bun run extract:tta && bun run transform:tta && bun run verify:tta",
+    "pipeline:ttb": "bun run crawl:ttb && bun run extract:ttb && bun run transform:ttb && bun run verify:ttb",
+    "pipeline:ttpr": "bun run crawl:ttpr && bun run extract:ttpr && bun run transform:ttpr && bun run verify:ttpr",
     "audit:facet-noise": "bun run scripts/audit-facet-noise.ts"
   },
   "dependencies": {

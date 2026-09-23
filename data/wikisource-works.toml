@@ -66,18 +66,24 @@ id = "taittiriya-aranyaka"
 title_sa = "तैत्तिरीयारण्यकम्"
 wikisource = "तैत्तिरीय-आरण्यकम्"
 category = "वेदाः"
-status = "reserved"
+status = "in_progress"
+editions = [
+  { id = "accented", title = "तैत्तिरीयारण्यकम् (सस्वरपाठः)" },
+]
 
 [[work]]
 id = "taittiriya-brahmana"
 title_sa = "तैत्तिरीयब्राह्मणम्"
-wikisource = "तैत्तिरीयब्राह्मणम् (विस्वरपाठः)"
+wikisource = "तैत्तिरीयब्राह्मणम्"
 category = "वेदाः"
-status = "reserved"
+status = "in_progress"
+editions = [
+  { id = "accented", title = "तैत्तिरीयब्राह्मणम् (सस्वरपाठः)" },
+]
 
 [[work]]
 id = "taittiriya-pratisakhya"
 title_sa = "तैत्तिरीयप्रातिशाख्यम्"
 wikisource = "तैत्तरीयप्रातिशाख्यम्"
 category = "वेदाङ्गम्"
-status = "reserved"
+status = "in_progress"

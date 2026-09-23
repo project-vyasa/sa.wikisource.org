@@ -1,0 +1,11 @@
+prasna	anuvakas	mantras	header
+1	32	131	yes
+2	19	22	yes
+3	21	52	yes
+4	12	27	yes
+5	15	42	yes
+6	64	79	yes
+7	42	93	yes
+8	12	108	yes
+
+prasnas=8 anuvakas=217 mantras=554
