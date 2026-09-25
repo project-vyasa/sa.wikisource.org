@@ -77,6 +77,12 @@
     "verify:pv": "bun run src/verify/pv.ts",
     "build:pv": "vyasac pack data/processed/panchavimsha-brahmana && vyasac publish data/processed/panchavimsha-brahmana",
     "pipeline:pv": "bun run crawl:pv && bun run extract:pv && bun run transform:pv && bun run verify:pv",
+    "crawl:vj": "bun run src/crawl/vj.ts",
+    "extract:vj": "bun run src/extract/vj.ts",
+    "transform:vj": "bun run src/transform/vj.ts",
+    "verify:vj": "bun run src/verify/vj.ts",
+    "build:vj": "vyasac pack data/processed/vedanga-jyotisha && vyasac publish data/processed/vedanga-jyotisha",
+    "pipeline:vj": "bun run crawl:vj && bun run extract:vj && bun run transform:vj && bun run verify:vj",
     "audit:facet-noise": "bun run scripts/audit-facet-noise.ts"
   },
   "dependencies": {

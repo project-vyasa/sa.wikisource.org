@@ -1,0 +1,5 @@
+chapter	verses	max_id
+archa	36	36
+yajusha	43	43
+
+verses=79

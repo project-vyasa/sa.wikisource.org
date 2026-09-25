@@ -32,7 +32,7 @@ Last probe of sa.wikisource.org page existence: 2026-09-24 (HTTP / parse API).
 | **Vyākaraṇa** | Aṣṭādhyāyī | `ashtadhyayi` | ✓ | **in_progress** |
 | | Dhātu / Gaṇa pāṭha | `dhatupatha`, `ganapatha` | reserved | **reserved** |
 | **Nirukta** | Yāska | `nirukta` | ✓ (index → subworks) | **planned** |
-| **Jyotiṣa** | Vedāṅga Jyotiṣa | `vedanga-jyotisha` | ✓ | **planned** |
+| **Jyotiṣa** | Vedāṅga Jyotiṣa | `vedanga-jyotisha` | ✓ | **published** (79 verses; Ārca 36 incomplete vs 43) |
 | **Kalpa** | Śrauta / Gṛhya / Dharma / Śulba | `apastamba-grhya`, `gautama-dharma`, `baudhayana-sulba` | partial ✓ | **planned** |
 
 ---
@@ -59,5 +59,6 @@ Last probe of sa.wikisource.org page existence: 2026-09-24 (HTTP / parse API).
 - Gopatha: [`notes/gopatha.md`](./gopatha.md)
 - Pañcaviṃśa: [`notes/panchavimsha.md`](./panchavimsha.md)
 - Kaushitaki: [`notes/kaushitaki.md`](./kaushitaki.md)
+- Vedāṅga Jyotiṣa: [`notes/vedanga-jyotisha.md`](./vedanga-jyotisha.md)
 - Taittirīya: [`notes/taittiriya.md`](./taittiriya.md)
 - Aṣṭādhyāyī: [`notes/ashtadhyayi.md`](./ashtadhyayi.md)
