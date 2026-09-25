@@ -1,0 +1,30 @@
+[workspace]
+name = "kauthuma-samhita"
+title = "सामवेदः (कौथुमीया)"
+description = "Kauthuma Sāmaveda saṃhitā (accented) from Sanskrit Wikisource"
+
+[catalog]
+type = "work"
+language = "sa"
+license = "CC-BY-SA-4.0"
+
+[publish]
+publisher_dir = "../../../sa_wikisource"
+
+[urn]
+path_schema = ["arcika", "prapāṭhaka", "segment"]
+corpus = "kauthuma-samhita"
+hierarchy = ["arcika", "prapāṭhaka", "segment", "mantra"]
+
+[build.default]
+layout = "sequence"
+target = "view"
+publisher_css = ["styles/indic-verse.css"]
+css = ["templates/html/theme.css", "templates/html/reading.css"]
+
+[streams.primary]
+path = "content/samhita"
+segment_separator = "\n"
+language = "sa"
+script = "Deva"
+kind = "source"

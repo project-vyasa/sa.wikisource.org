@@ -3,7 +3,7 @@ identifier = "sa_wikisource"
 title = "Sanskrit Wikisource (विकिस्रोतः)"
 url = "https://sa.wikisource.org"
 catalog_url = "https://project-vyasa.github.io/sa.wikisource.org/catalog.json"
-description = "Open-access Sanskrit texts from Wikimedia Wikisource: Rig Veda, Aṣṭādhyāyī, and the Taittirīya (Kṛṣṇa Yajurveda) family."
+description = "Open-access Sanskrit texts from Wikimedia Wikisource: Rig Veda, Taittirīya (Kṛṣṇa Yajur) family, Sāmaveda (Kauthuma) + Pañcaviṃśa, Atharvaveda (Śaunaka) + Gopatha, Kaushitaki, Aṣṭādhyāyī, and related Vedāṅga."
 content_themes = ["light", "dark", "parchment"]
 
 [curation]

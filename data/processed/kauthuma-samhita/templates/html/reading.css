@@ -1,0 +1,77 @@
+/* Craft reading view. Tokens come from publisher styles/indic-verse.css. */
+
+.verse-content {
+	margin: 0 auto 0.75rem;
+	padding: 0.35rem 0 0.75rem;
+}
+
+.verse-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.2rem 1rem;
+	justify-content: center;
+	font-size: 0.8rem;
+	color: var(--vyasa-meta);
+	margin-bottom: 0.5rem;
+	padding-bottom: 0.4rem;
+	border-bottom: 1px dashed var(--vyasa-hairline);
+}
+
+.meta-item {
+	display: inline-flex;
+	gap: 0.35rem;
+	align-items: baseline;
+}
+
+.meta-label {
+	font-weight: 600;
+	color: var(--vyasa-label);
+	text-transform: uppercase;
+	font-size: 0.65rem;
+	letter-spacing: 0.04em;
+}
+
+.meta-value {
+	font-family: var(--vyasa-font-deva);
+	color: var(--vyasa-stream-body-color);
+}
+
+.verse-stack {
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+}
+
+.stream-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+}
+
+.label {
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	color: var(--vyasa-label);
+	letter-spacing: 0.05em;
+	line-height: 1.2;
+}
+
+.stream-content {
+	overflow-wrap: break-word;
+}
+
+.stream-content .mantra,
+.stream-content .samhita {
+	margin: 0;
+	white-space: pre-line;
+}
+
+.deva-text {
+	font-family: var(--vyasa-font-deva);
+}
+
+.samhita-text {
+	font-size: var(--vyasa-stream-body-size);
+	color: var(--vyasa-stream-body-color);
+	line-height: var(--vyasa-stream-body-line);
+}

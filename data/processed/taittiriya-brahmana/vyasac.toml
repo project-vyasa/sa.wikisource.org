@@ -25,3 +25,6 @@ css = ["templates/html/theme.css", "templates/html/reading.css"]
 [streams.primary]
 path = "content/samhita"
 segment_separator = "\n"
+language = "sa"
+script = "Deva"
+kind = "source"

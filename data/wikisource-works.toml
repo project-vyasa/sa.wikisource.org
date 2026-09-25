@@ -90,6 +90,29 @@ wikisource = "तैत्तरीयप्रातिशाख्यम्"
 category = "वेदाङ्गम्"
 status = "published"
 
+# Sāmaveda (Kauthuma) and Atharvaveda (Śaunaka). CLI: sv / av — not catalog ids.
+# See notes/kauthuma.md and notes/atharvaveda.md.
+
+[[work]]
+id = "kauthuma-samhita"
+title_sa = "सामवेदसंहिता (कौथुम)"
+wikisource = "सामवेदः/कौथुमीया/संहिता/सस्वरा पूर्णा"
+category = "वेदाः"
+status = "published"
+editions = [
+  { id = "accented", title = "कौथुमीया संहिता (सस्वरा पूर्णा)" },
+]
+
+[[work]]
+id = "atharvaveda-saunaka"
+title_sa = "अथर्ववेदसंहिता (शौनक)"
+wikisource = "अथर्ववेदः/काण्डं १"
+category = "वेदाः"
+status = "published"
+editions = [
+  { id = "samhita", title = "अथर्ववेदः — consolidated kāṇḍa pages" },
+]
+
 # Brāhmaṇa & Vedāṅga gap-fill (see notes/veda-coverage-matrix.md). CLI suffixes are not catalog ids.
 
 [[work]]
@@ -97,21 +120,21 @@ id = "gopatha-brahmana"
 title_sa = "गोपथब्राह्मणम्"
 wikisource = "गोपथब्राह्मणम्"
 category = "वेदाः"
-status = "planned"
+status = "in_progress"
 
 [[work]]
 id = "panchavimsha-brahmana"
 title_sa = "पञ्चविंशब्राह्मणम्"
 wikisource = "पञ्चविंशब्राह्मणम्"
 category = "वेदाः"
-status = "planned"
+status = "in_progress"
 
 [[work]]
 id = "kaushitaki-brahmana"
 title_sa = "कौषीतकिब्राह्मणम्"
 wikisource = "कौषीतकिब्राह्मणम्"
 category = "वेदाः"
-status = "planned"
+status = "in_progress"
 
 [[work]]
 id = "shatapatha-brahmana"

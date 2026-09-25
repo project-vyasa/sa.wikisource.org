@@ -17,7 +17,6 @@ Works in this publisher (ids in [`data/wikisource-works.toml`](data/wikisource-w
 | `gopatha-brahmana` | Gopatha Brāhmaṇa (`gp`, WS kāṇḍas 1–2) | in progress |
 | `panchavimsha-brahmana` | Pañcaviṃśa Brāhmaṇa (`pv`) | in progress |
 | `kaushitaki-brahmana` | Kaushitaki Brāhmaṇa (`kb`) | in progress |
-| `vedanga-jyotisha` | Vedāṅga Jyotiṣa (`vj`) | published |
 
 Veda / Vedāṅga coverage vs India.org taxonomy: [`notes/veda-coverage-matrix.md`](notes/veda-coverage-matrix.md) and [`data/wikisource-works.toml`](data/wikisource-works.toml).
 

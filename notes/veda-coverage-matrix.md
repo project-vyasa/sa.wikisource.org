@@ -13,11 +13,11 @@ Last probe of sa.wikisource.org page existence: 2026-09-24 (HTTP / parse API).
 
 | Veda / śākhā | Saṃhitā | Brāhmaṇa | Āraṇyaka | Upaniṣad | Publisher notes |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Ṛgveda** (Śākala) | `rigveda` **published** | `kaushitaki-brahmana` **planned** (WS ✓) | — (WS ✗ Aitareya) | — (standalone pages partial) | RV padapāṭha + Sāyaṇa are editorial streams, not strata. |
+| **Ṛgveda** (Śākala) | `rigveda` **published** | `kaushitaki-brahmana` **in_progress** (30 adhyāyas, 548 sections) | — (WS ✗ Aitareya) | — (standalone pages partial) | RV padapāṭha + Sāyaṇa are editorial streams, not strata. |
 | **Kṛṣṇa Yajurveda** (Taittirīya) | `taittiriya-samhita` **published** | `taittiriya-brahmana` **published** | `taittiriya-aranyaka` **published** | Partial in TTA (Śikṣāvallī, Mahānārāyaṇa); TU 2–3 absent in WS dump | TPr **published**; see `notes/taittiriya.md`. |
 | **Śukla Yajurveda** (Vājasaneyi) | — (WS ✗ VS saṃhitā title) | `shatapatha-brahmana` **planned** (WS ✓) | In Śatapatha | `isha-upanishad` etc. **planned** (WS ✓ Īśā) | Separate catalog from Taittirīya. |
-| **Sāmaveda** (Kauthuma) | `kauthuma-samhita` **planned** (WS ✓) | `panchavimsha-brahmana` **planned** (WS ✓, 25 adhyāyas) | — | — (Kena etc. separate) | Gāna corpora **later**. |
-| **Atharvaveda** (Śaunaka) | `atharvaveda-saunaka` **planned** (WS ✓) | `gopatha-brahmana` **planned** (WS ✓, single dump) | (in brāhmaṇa) | — (Mundaka etc. **planned**) | |
+| **Sāmaveda** (Kauthuma) | `kauthuma-samhita` **published** | `panchavimsha-brahmana` **in_progress** (25 adhyāyas, 372 sections) | — | — (Kena etc. separate) | Gāna corpora **later** (`notes/kauthuma.md`). |
+| **Atharvaveda** (Śaunaka) | `atharvaveda-saunaka` **published** | `gopatha-brahmana` **in_progress** (WS kāṇḍas 1–2 only, 5240 padas) | (in brāhmaṇa) | — (Mundaka etc. **planned**) | |
 
 ---
 
@@ -54,5 +54,10 @@ Last probe of sa.wikisource.org page existence: 2026-09-24 (HTTP / parse API).
 
 ## 4. Cross-links
 
+- Kauthuma: [`notes/kauthuma.md`](./kauthuma.md)
+- Atharvaveda: [`notes/atharvaveda.md`](./atharvaveda.md)
+- Gopatha: [`notes/gopatha.md`](./gopatha.md)
+- Pañcaviṃśa: [`notes/panchavimsha.md`](./panchavimsha.md)
+- Kaushitaki: [`notes/kaushitaki.md`](./kaushitaki.md)
 - Taittirīya: [`notes/taittiriya.md`](./taittiriya.md)
 - Aṣṭādhyāyī: [`notes/ashtadhyayi.md`](./ashtadhyayi.md)

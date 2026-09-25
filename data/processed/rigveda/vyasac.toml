@@ -27,11 +27,20 @@ css = ["templates/html/theme.css", "templates/html/reading.css"]
 [streams.primary]
 path = "content/samhita"
 segment_separator = "\n"
+language = "sa"
+script = "Deva"
+kind = "source"
 
 [streams.padapatha]
 path = "content/padapatha"
 segment_separator = " "
+language = "sa"
+script = "Deva"
+kind = "source"
 
 [streams.sayana]
 path = "content/sayana"
 segment_separator = "\n"
+language = "sa"
+script = "Deva"
+kind = "commentary"

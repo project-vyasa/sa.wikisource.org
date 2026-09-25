@@ -1,0 +1,30 @@
+[workspace]
+name = "panchavimsha-brahmana"
+title = "पञ्चविंशब्राह्मणम्"
+description = "Pañcaviṃśa Brāhmaṇa (Sāmaveda) from Sanskrit Wikisource adhyāya pages"
+
+[catalog]
+type = "work"
+language = "sa"
+license = "CC-BY-SA-4.0"
+
+[publish]
+publisher_dir = "../../../sa_wikisource"
+
+[urn]
+path_schema = ["adhyaya", "section"]
+corpus = "panchavimsha-brahmana"
+hierarchy = ["adhyaya", "section"]
+
+[build.default]
+layout = "sequence"
+target = "view"
+publisher_css = ["styles/indic-verse.css"]
+css = ["templates/html/theme.css", "templates/html/reading.css"]
+
+[streams.primary]
+path = "content/samhita"
+segment_separator = "\n"
+language = "sa"
+script = "Deva"
+kind = "source"
