@@ -26,7 +26,7 @@ Sample: `bun run src/extract/aady.ts 1.1` then `bun run src/transform/aady.ts 1.
 - **Mūla:** `१.१.१ वृद्धिरादैच् ।`
 - **Vyākhyā:** `[१|१|१] <sūtra> <hindi> | <udāharaṇa>` — strip aligned mūla prefix; split on first `|`.
 - **Maheśvara:** 14 Śiva sūtras from mūla adhyāya 1 `==प्रत्याहार सूत्र==`, packed as adhyāya `09` pāda `01` (not `00` — packer treats 0 as a slot).
-- **Spine:** mūla files live in `content/sutra/`. `[streams.primary] path = "content/sutra"` is the URN spine alias; pack uses folder name `sutra`. Do not set `stream.name = "primary"` on that folder.
+- **Spine:** mūla files live in `content/sutra/`. That folder’s `stream.toml` sets `primary = true`; pack uses folder name `sutra`. Do not set `stream.name = "primary"` on that folder.
 
 ## Reuse vs Rig Veda
 

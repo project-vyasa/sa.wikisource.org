@@ -19,26 +19,6 @@ hierarchy = ["adhyaya", "pada", "sutra"]
 [build.default]
 layout = "sequence"
 target = "view"
+streams = ["sutra", "vyakhya", "udaharana"]
 publisher_css = ["styles/indic-verse.css"]
 css = ["templates/html/theme.css", "templates/html/reading.css"]
-
-[streams.primary]
-path = "content/sutra"
-segment_separator = "\n"
-language = "sa"
-script = "Deva"
-kind = "source"
-
-[streams.vyakhya]
-path = "content/vyakhya"
-segment_separator = "\n"
-language = "sa"
-script = "Deva"
-kind = "commentary"
-
-[streams.udaharana]
-path = "content/udaharana"
-segment_separator = "\n"
-language = "sa"
-script = "Deva"
-kind = "commentary"

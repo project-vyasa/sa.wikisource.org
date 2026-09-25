@@ -6,7 +6,7 @@ Multi-stream workspace generated from [Sanskrit Wikisource](https://sa.wikisourc
 
 | Stream | Path | Content |
 |--------|------|---------|
-| `samhita` (spine; `[streams.primary]`) | `content/samhita/` | Accented Devanagari Samhita. Packed name is the folder (`samhita`). `ref="primary"` in templates is the alias. |
+| `samhita` (spine; `primary = true`) | `content/samhita/` | Accented Devanagari Samhita. Packed name is the folder (`samhita`). `ref="primary"` in templates is the alias. |
 | `padapatha` | `content/padapatha/` | Word-by-word Padapatha |
 | `sayana` | `content/sayana/` | Sayanacharya Bhashya |
 
@@ -32,7 +32,7 @@ templates/html/views/reading.vy           # craft stacked reading (reading.css)
 
 Example URN relative path: `01:001:01` (mandala 1, sukta 1, rik 1).
 
-Content and generated annotations are produced locally (`transform:rv`, `enrich:rv`) and are gitignored.
-Configs, templates, and this README are committed.
+`.vy` content and generated annotations are produced locally (`transform:rv`, `enrich:rv`) and are gitignored.
+`vyasac.toml`, each stream’s `content/<folder>/stream.toml`, templates, and this README are committed.
 
 See `notes/enrich-rv.md` for the enrichment stage.

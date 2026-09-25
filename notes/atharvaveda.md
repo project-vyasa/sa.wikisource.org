@@ -72,7 +72,7 @@ On disk (RV-shaped):
 content/samhita/{kanda}/{sukta}.vy
 ```
 
-`[streams.primary] path = "content/samhita"` — packed name `samhita`; no `stream.name = "primary"` sidecar.
+`content/samhita/stream.toml` sets `primary = true`. Packed name is the folder (`samhita`).
 
 **No padapāṭha / commentary streams** on these Wikisource pages for v1.
 

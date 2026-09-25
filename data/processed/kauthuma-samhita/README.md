@@ -6,10 +6,10 @@ Single-stream workspace generated from [Sanskrit Wikisource](https://sa.wikisour
 
 | Stream | Path | Content |
 |--------|------|---------|
-| `samhita` (spine; `[streams.primary]`) | `content/samhita/` | Accented Devanagari (Devanagari Extended svara marks). Packed name is the folder (`samhita`). |
+| `samhita` (spine; `primary = true`) | `content/samhita/` | Accented Devanagari (Devanagari Extended svara marks). Packed name is the folder (`samhita`). |
 
 Hierarchy: **arcika → prapāṭhaka → segment (daśati / ardha) → mantra**. CLI suffix: `:sv`.
 
-Content is produced locally (`transform:sv`) and gitignored. Configs and templates are committed.
+`.vy` content is produced locally (`transform:sv`) and gitignored. `vyasac.toml`, `content/samhita/stream.toml`, and templates are committed.
 
 See [`notes/kauthuma.md`](../../../notes/kauthuma.md).

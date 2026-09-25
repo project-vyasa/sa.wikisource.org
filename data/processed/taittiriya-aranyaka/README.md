@@ -6,7 +6,7 @@ Single-stream workspace generated from the [Sanskrit Wikisource](https://sa.wiki
 
 | Stream | Path | Content |
 |--------|------|---------|
-| `samhita` (spine; `[streams.primary]`) | `content/samhita/` | Accented Devanagari. Packed name is the folder (`samhita`). |
+| `samhita` (spine; `primary = true`) | `content/samhita/` | Accented Devanagari. Packed name is the folder (`samhita`). |
 
 Hierarchy: **praśna → anuvāka → mantra** (no kāṇḍa). Corpus id: `taittiriya-aranyaka`. CLI suffix: `:tta`.
 

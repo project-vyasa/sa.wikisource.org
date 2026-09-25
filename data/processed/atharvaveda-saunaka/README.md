@@ -6,10 +6,10 @@ Single-stream workspace generated from [Sanskrit Wikisource](https://sa.wikisour
 
 | Stream | Path | Content |
 |--------|------|---------|
-| `samhita` (spine; `[streams.primary]`) | `content/samhita/` | Unaccented Devanagari saṃhitā. Packed name is the folder (`samhita`). |
+| `samhita` (spine; `primary = true`) | `content/samhita/` | Unaccented Devanagari saṃhitā. Packed name is the folder (`samhita`). |
 
 Hierarchy: **kāṇḍa → sūkta → ṛk** (RV-shaped). CLI suffix: `:av`.
 
-No padapāṭha or Sāyaṇa on these Wikisource pages for v1. Content is produced locally (`transform:av`) and gitignored.
+No padapāṭha or Sāyaṇa on these Wikisource pages for v1. `.vy` content is produced locally (`transform:av`) and gitignored; `vyasac.toml` and `content/samhita/stream.toml` are committed.
 
 See [`notes/atharvaveda.md`](../../../notes/atharvaveda.md).

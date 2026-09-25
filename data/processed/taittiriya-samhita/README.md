@@ -6,7 +6,7 @@ Single-stream workspace generated from [Sanskrit Wikisource](https://sa.wikisour
 
 | Stream | Path | Content |
 |--------|------|---------|
-| `samhita` (spine; `[streams.primary]`) | `content/samhita/` | Accented Devanagari. Packed name is the folder (`samhita`). `ref="primary"` in templates is the alias. |
+| `samhita` (spine; `primary = true`) | `content/samhita/` | Accented Devanagari. Packed name is the folder (`samhita`). `ref="primary"` in templates is the alias. |
 
 No padapāṭha or Sāyaṇa on these Wikisource pages. Hierarchy: **kāṇḍa → praśna → anuvāka → mantra** (dump’s 4th index is the khaṇḍa; command name is `mantra` so it does not collide with kāṇḍa). Corpus id: `taittiriya-samhita`. CLI suffix: `:tts`.
 

@@ -120,3 +120,9 @@ Pack must **fail** if any `[build.default] streams` entry does not resolve to a 
 
 Please reply under `## Compiler`.
 
+---
+
+## Publisher — 2026-09-24 (stream.toml)
+
+`[streams]` tables are removed from `vyasac.toml`. Each `content/<folder>/stream.toml` declares `language`, `script`, and `kind`. The URN spine is `primary = true` on exactly one of those files (RV `samhita`, Aady `sutra`). `segment_separator` moved with them. `ref="primary"` in templates is still a pack-time rewrite. Processed workspaces in this repo were migrated; transform scripts do not rewrite `vyasac.toml` or `stream.toml`. Edit `content/<folder>/stream.toml` in git like `vyasac.toml`.
+

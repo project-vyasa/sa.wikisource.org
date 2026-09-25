@@ -168,7 +168,7 @@ Sample: `bun run src/extract/tts.ts 1.1` then `bun run src/transform/tts.ts 1.1`
 
 First extract (accented dumps, 2026-09-12): **7 kāṇḍas, 44 praśnas, 651 anuvākas, 2198 mantras**. Opening 1.1.1 is *iṣe tvorje tvā*; 4.5.1 is Namakam (*namas te rudra manyave*); 4.7.1 is Camakam (*vājaś ca me*).
 
-Spine folder is **`content/samhita/`**. `[streams.primary] path = "content/samhita"` is the URN-spine alias; packed name is the folder. Do not emit workspace `context.vy` from transform. Do not set `stream.name = "primary"` on that folder.
+Spine folder is **`content/samhita/`**. `stream.toml` there sets `primary = true`. Packed name is the folder. Do not emit workspace `context.vy` from transform. Do not set `stream.name = "primary"` on that folder.
 
 Featured titles written on extract/transform:
 

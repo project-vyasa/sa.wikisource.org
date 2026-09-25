@@ -6,7 +6,7 @@ Single-stream sūtra workspace generated from [तैत्तरीयप्र
 
 | Stream | Path | Content |
 |--------|------|---------|
-| `sutra` (spine; `[streams.primary]`) | `content/sutra/` | Mūla Devanagari. Packed name is the folder (`sutra`). |
+| `sutra` (spine; `primary = true`) | `content/sutra/` | Mūla Devanagari. Packed name is the folder (`sutra`). |
 
 Hierarchy: **adhyāya → sūtra** (24 adhyāyas). Corpus id: `taittiriya-pratisakhya`. CLI suffix: `:ttpr`. Dump sūtra numbers are noisy; extract assigns sequential leaf ids in source order.
 

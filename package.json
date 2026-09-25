@@ -15,7 +15,7 @@
     "pipeline:rv": "bun run crawl:rv && bun run extract:rv && bun run transform:rv && bun run enrich:rv && bun run verify:rv",
     "extract:sample": "bun run src/extract/index.ts 1.1 1.185",
     "build:rv": "vyasac pack data/processed/rigveda && vyasac publish data/processed/rigveda",
-    "build": "bun run build:rv",
+    "build": "bun run build:rv && bun run build:aady && bun run build:tts && bun run build:tta && bun run build:ttb && bun run build:ttpr && bun run build:sv && bun run build:av && bun run build:kb && bun run build:gp && bun run build:pv && bun run build:vj",
     "deploy": "gh-pages -d sa_wikisource/dist --dotfiles --nojekyll",
     "transform:sample": "bun run src/transform/index.ts 1.1 1.185",
     "test": "bun test src",

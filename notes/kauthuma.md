@@ -100,7 +100,7 @@ On disk (TTS-shaped paths):
 content/samhita/{arcika}/{prapāṭhaka}/{segment}.vy
 ```
 
-`[streams.primary] path = "content/samhita"` — packed name `samhita`; no `stream.name = "primary"` sidecar.
+`content/samhita/stream.toml` sets `primary = true`. Packed name is the folder (`samhita`).
 
 ---
 

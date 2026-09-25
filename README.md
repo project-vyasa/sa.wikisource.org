@@ -41,8 +41,9 @@ This is a **public publisher repo** with a small `main` branch and a **GitHub Pa
 
 | Location | Committed? | Contents |
 | :--- | :--- | :--- |
-| **`main`** | Yes | Pipeline code, `sa_wikisource/` (`publisher.toml`, shared `styles/`), workspace scaffold (`vyasac.toml`, `context.vy`, templates), notes, audit summaries |
-| **`main`** | No | `data/raw/` (HTML), `data/extracted/` (JSON), `content/*.vy`, `node_modules/`, local `build/` |
+| **`main`** | Yes | Pipeline code, `sa_wikisource/` (`publisher.toml`, shared `styles/`), workspace scaffold (`vyasac.toml`, `content/**/stream.toml`, `context.vy`, templates), notes, audit summaries |
+| **`main`** | Yes | `data/processed/*/content/**/stream.toml` (per-stream metadata; committed with `vyasac.toml`) |
+| **`main`** | No | `data/raw/` (HTML), `data/extracted/` (JSON), other `data/processed/*/content/**` (`.vy`), `node_modules/`, local `build/` |
 | **GitHub Pages** (`gh-pages`) | Deploy only | `sa_wikisource/dist/catalog.json` + `.vyview` files — what viewers consume |
 | **GitHub Release** (optional) | Artifact | e.g. `rigveda-extracted.tar.zst` — avoids re-crawling Wikimedia for contributors |
 
@@ -56,7 +57,7 @@ bun run extract:rv
 bun run transform:rv
 bun run enrich:rv
 bun run verify:rv
-bun run build:rv      # vyasac pack + publish → dist/
+bun run build         # pack + publish all workspaces → dist/ (or build:rv, build:sv, … per work)
 bun run deploy        # push dist/ to GitHub Pages
 ```
 
@@ -120,7 +121,7 @@ We extract these three layers into structured Vyasa streams, enrich anukramani f
 | 3 Transform | `bun run transform:rv` | `data/processed/rigveda/content/**/*.vy` (local only) |
 | 4 Enrich | `bun run enrich:rv` | `annotations/anukramani/`, `vocabulary/{entities,meters}.vy` |
 | 5 Verify | `bun run verify:rv` | `data/audit/rigveda-segments-latest.txt` |
-| Pack | `bun run build:rv` / `build:aady` / `build:tts` / `build:tta` / `build:ttb` / `build:ttpr` / `build:sv` / `build:av` | `sa_wikisource/dist/catalog.json`, `.vyview` files |
+| Pack | `bun run build` (all) or `build:rv` / `build:aady` / `build:tts` / `build:tta` / `build:ttb` / `build:ttpr` / `build:sv` / `build:av` / `build:kb` / `build:gp` / `build:pv` / `build:vj` | `sa_wikisource/dist/catalog.json`, `.vyview` files |
 | Deploy | `bun run deploy` | GitHub Pages |
 
 Requires `REFERENCE_SNAPSHOTS` for enrich (see `notes/enrich-rv.md`). `patch:rv` is deprecated.

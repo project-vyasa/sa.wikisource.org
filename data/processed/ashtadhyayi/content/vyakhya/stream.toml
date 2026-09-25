@@ -1,0 +1,4 @@
+language = "sa"
+script = "Deva"
+kind = "commentary"
+segment_separator = "\n"

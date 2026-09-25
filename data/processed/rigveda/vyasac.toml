@@ -19,28 +19,7 @@ hierarchy = ["mandala", "sukta", "rik"]
 [build.default]
 layout = "sequence"
 target = "view"
-# Packed folder names (also accepts TOML keys). Order is grid / streams_config order.
+# Packed folder names. Order is grid / streams_config order.
 streams = ["samhita", "padapatha", "sayana"]
 publisher_css = ["styles/indic-verse.css"]
 css = ["templates/html/theme.css", "templates/html/reading.css"]
-
-[streams.primary]
-path = "content/samhita"
-segment_separator = "\n"
-language = "sa"
-script = "Deva"
-kind = "source"
-
-[streams.padapatha]
-path = "content/padapatha"
-segment_separator = " "
-language = "sa"
-script = "Deva"
-kind = "source"
-
-[streams.sayana]
-path = "content/sayana"
-segment_separator = "\n"
-language = "sa"
-script = "Deva"
-kind = "commentary"

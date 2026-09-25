@@ -6,7 +6,7 @@ Multi-stream workspace generated from [Sanskrit Wikisource](https://sa.wikisourc
 
 | Stream | Path | Content |
 |--------|------|---------|
-| `sutra` (spine; `[streams.primary]`) | `content/sutra/` | Mūla Devanagari from अष्टाध्यायी. Packed name is the folder (`sutra`). `ref="primary"` in templates is the alias. |
+| `sutra` (spine; `primary = true`) | `content/sutra/` | Mūla Devanagari from अष्टाध्यायी. Packed name is the folder (`sutra`). `ref="primary"` in templates is the alias. |
 | `vyakhya` | `content/vyakhya/` | Hindi vyākhyā |
 | `udaharana` | `content/udaharana/` | Examples after `\|` when present |
 
@@ -14,4 +14,4 @@ Maheśvara / Śiva sūtras are packed as adhyāya `09` pāda `01` (14 pratyāhā
 
 Hierarchy: **adhyāya → pāda → sūtra**. Corpus id: `ashtadhyayi` (see `data/wikisource-works.toml`). CLI scripts use the short suffix `:aady`.
 
-Content is produced locally (`transform:aady`) and gitignored. Configs and templates are committed.
+`.vy` content is produced locally (`transform:aady`) and gitignored. `vyasac.toml`, `content/**/stream.toml`, and templates are committed.
