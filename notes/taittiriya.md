@@ -23,10 +23,10 @@ Taittirīya is the living Kṛṣṇa śākhā we are packing first. Maitrāya�
 
 | CLI | Catalog id | Wikisource source of truth | Status |
 | :--- | :--- | :--- | :--- |
-| `tts` | `taittiriya-samhita` | Accented dumps [संहिता-१-४](https://sa.wikisource.org/wiki/तैत्तिरीयसंहिता-१-४) and [संहिता-५-७](https://sa.wikisource.org/wiki/तैत्तिरीयसंहिता-५-७) | **in progress** |
-| `tta` | `taittiriya-aranyaka` | Accented dump [तैत्तिरीय-आरण्यकम्](https://sa.wikisource.org/wiki/तैत्तिरीय-आरण्यकम्) | **in progress** |
-| `ttb` | `taittiriya-brahmana` | Accented dump [तैत्तिरीयब्राह्मणम्](https://sa.wikisource.org/wiki/तैत्तिरीयब्राह्मणम्) | **in progress** |
-| `ttpr` | `taittiriya-pratisakhya` | [तैत्तरीयप्रातिशाख्यम्](https://sa.wikisource.org/wiki/तैत्तरीयप्रातिशाख्यम्) (~19k chars of sūtras) | **in progress** |
+| `tts` | `taittiriya-samhita` | Accented dumps [संहिता-१-४](https://sa.wikisource.org/wiki/तैत्तिरीयसंहिता-१-४) and [संहिता-५-७](https://sa.wikisource.org/wiki/तैत्तिरीयसंहिता-५-७) | **published** |
+| `tta` | `taittiriya-aranyaka` | Accented dump [तैत्तिरीय-आरण्यकम्](https://sa.wikisource.org/wiki/तैत्तिरीय-आरण्यकम्) | **published** |
+| `ttb` | `taittiriya-brahmana` | Accented dump [तैत्तिरीयब्राह्मणम्](https://sa.wikisource.org/wiki/तैत्तिरीयब्राह्मणम्) | **published** |
+| `ttpr` | `taittiriya-pratisakhya` | [तैत्तरीयप्रातिशाख्यम्](https://sa.wikisource.org/wiki/तैत्तरीयप्रातिशाख्यम्) (~19k chars of sūtras) | **published** |
 
 **Do not allocate** `taittiriya-upanishad` or `sri-rudram` as corpora. Those are **spans** of TTA / TTS (below).
 

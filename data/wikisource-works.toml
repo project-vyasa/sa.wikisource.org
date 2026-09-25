@@ -45,7 +45,9 @@ status = "reserved"
 [[work]]
 id = "paniniya-siksa"
 title_sa = "पाणिनीयशिक्षा"
-status = "reserved"
+wikisource = "पाणिनीयशिक्षा"
+category = "वेदाङ्गम्"
+status = "planned"
 
 # Taittirīya (Kṛṣṇa Yajurveda) family. CLI suffixes: tts / tta / ttb / ttpr.
 # Do not allocate yajurveda, sri-rudram, or taittiriya-upanishad — those are
@@ -56,7 +58,7 @@ id = "taittiriya-samhita"
 title_sa = "तैत्तिरीयसंहिता"
 wikisource = "तैत्तिरीयसंहिता-१-४"
 category = "वेदाः"
-status = "in_progress"
+status = "published"
 editions = [
   { id = "accented", title = "तैत्तिरीयसंहिता (सस्वरपाठः)" },
 ]
@@ -66,7 +68,7 @@ id = "taittiriya-aranyaka"
 title_sa = "तैत्तिरीयारण्यकम्"
 wikisource = "तैत्तिरीय-आरण्यकम्"
 category = "वेदाः"
-status = "in_progress"
+status = "published"
 editions = [
   { id = "accented", title = "तैत्तिरीयारण्यकम् (सस्वरपाठः)" },
 ]
@@ -76,7 +78,7 @@ id = "taittiriya-brahmana"
 title_sa = "तैत्तिरीयब्राह्मणम्"
 wikisource = "तैत्तिरीयब्राह्मणम्"
 category = "वेदाः"
-status = "in_progress"
+status = "published"
 editions = [
   { id = "accented", title = "तैत्तिरीयब्राह्मणम् (सस्वरपाठः)" },
 ]
@@ -86,4 +88,90 @@ id = "taittiriya-pratisakhya"
 title_sa = "तैत्तिरीयप्रातिशाख्यम्"
 wikisource = "तैत्तरीयप्रातिशाख्यम्"
 category = "वेदाङ्गम्"
-status = "in_progress"
+status = "published"
+
+# Brāhmaṇa & Vedāṅga gap-fill (see notes/veda-coverage-matrix.md). CLI suffixes are not catalog ids.
+
+[[work]]
+id = "gopatha-brahmana"
+title_sa = "गोपथब्राह्मणम्"
+wikisource = "गोपथब्राह्मणम्"
+category = "वेदाः"
+status = "planned"
+
+[[work]]
+id = "panchavimsha-brahmana"
+title_sa = "पञ्चविंशब्राह्मणम्"
+wikisource = "पञ्चविंशब्राह्मणम्"
+category = "वेदाः"
+status = "planned"
+
+[[work]]
+id = "kaushitaki-brahmana"
+title_sa = "कौषीतकिब्राह्मणम्"
+wikisource = "कौषीतकिब्राह्मणम्"
+category = "वेदाः"
+status = "planned"
+
+[[work]]
+id = "shatapatha-brahmana"
+title_sa = "शतपथब्राह्मणम्"
+wikisource = "शतपथब्राह्मणम्"
+category = "वेदाः"
+status = "planned"
+
+[[work]]
+id = "isha-upanishad"
+title_sa = "ईशोपनिषद्"
+wikisource = "ईशोपनिषद्"
+category = "वेदाः"
+status = "planned"
+
+[[work]]
+id = "rigveda-pratisakhya"
+title_sa = "ऋग्वेदप्रातिशाख्यम्"
+wikisource = "ऋग्वेदप्रातिशाख्यम्"
+category = "वेदाङ्गम्"
+status = "planned"
+
+[[work]]
+id = "chandas-shastra"
+title_sa = "छन्दःशास्त्रम्"
+wikisource = "छन्दःशास्त्रम्"
+category = "वेदाङ्गम्"
+status = "planned"
+
+[[work]]
+id = "nirukta"
+title_sa = "निरुक्तम्"
+wikisource = "निरुक्तम्"
+category = "वेदाङ्गम्"
+status = "planned"
+
+[[work]]
+id = "vedanga-jyotisha"
+title_sa = "वेदाङ्गज्योतिषम्"
+wikisource = "वेदाङ्गज्योतिषम्"
+category = "वेदाङ्गम्"
+status = "planned"
+
+[[work]]
+id = "apastamba-grhya"
+title_sa = "आपस्तम्बगृह्यसूत्रम्"
+wikisource = "आपस्तम्बगृह्यसूत्रम्"
+category = "वेदाङ्गम्"
+status = "planned"
+
+[[work]]
+id = "gautama-dharma"
+title_sa = "गौतमधर्मसूत्रम्"
+wikisource = "गौतमधर्मसूत्रम्"
+category = "वेदाङ्गम्"
+status = "planned"
+
+[[work]]
+id = "baudhayana-sulba"
+title_sa = "बौधायनशुल्बसूत्रम्"
+wikisource = "बौधायनशुल्बसूत्रम्"
+category = "वेदाङ्गम्"
+status = "planned"

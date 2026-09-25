@@ -8,10 +8,18 @@ Works in this publisher (ids in [`data/wikisource-works.toml`](data/wikisource-w
 | :--- | :--- | :--- |
 | `rigveda` | Rig Veda (ऋग्वेदः) | published |
 | `ashtadhyayi` | Aṣṭādhyāyī (अष्टाध्यायी) | in progress |
-| `taittiriya-samhita` | Taittirīya Saṃhitā (तैत्तिरीयसंहिता) | in progress |
-| `taittiriya-aranyaka` | Taittirīya Āraṇyaka (तैत्तिरीयारण्यकम्) | in progress |
-| `taittiriya-brahmana` | Taittirīya Brāhmaṇa (तैत्तिरीयब्राह्मणम्) | in progress |
-| `taittiriya-pratisakhya` | Taittirīya-Prātiśākhya (तैत्तिरीयप्रातिशाख्यम्) | in progress |
+| `taittiriya-samhita` | Taittirīya Saṃhitā (तैत्तिरीयसंहिता) | published |
+| `taittiriya-aranyaka` | Taittirīya Āraṇyaka (तैत्तिरीयारण्यकम्) | published |
+| `taittiriya-brahmana` | Taittirīya Brāhmaṇa (तैत्तिरीयब्राह्मणम्) | published |
+| `taittiriya-pratisakhya` | Taittirīya-Prātiśākhya (तैत्तिरीयप्रातिशाख्यम्) | published |
+| `kauthuma-samhita` | Kauthuma Sāmaveda saṃhitā (`sv`) | published |
+| `atharvaveda-saunaka` | Atharvaveda Śaunaka (`av`) | published |
+| `gopatha-brahmana` | Gopatha Brāhmaṇa (`gp`, WS kāṇḍas 1–2) | in progress |
+| `panchavimsha-brahmana` | Pañcaviṃśa Brāhmaṇa (`pv`) | in progress |
+| `kaushitaki-brahmana` | Kaushitaki Brāhmaṇa (`kb`) | in progress |
+| `vedanga-jyotisha` | Vedāṅga Jyotiṣa (`vj`) | published |
+
+Veda / Vedāṅga coverage vs India.org taxonomy: [`notes/veda-coverage-matrix.md`](notes/veda-coverage-matrix.md) and [`data/wikisource-works.toml`](data/wikisource-works.toml).
 
 ## Attribution and thanks
 
@@ -66,6 +74,8 @@ bun run build:aady
 
 Taittirīya family (`taittiriya-samhita` / `:tts`, `taittiriya-aranyaka` / `:tta`, `taittiriya-brahmana` / `:ttb`, `taittiriya-pratisakhya` / `:ttpr`). Named spans (Rudram, Camakam, Śikṣāvallī) are annotations, not extra catalog ids.
 
+**Published:** Kauthuma Sāmaveda (`kauthuma-samhita`, CLI **`sv`**) and Atharvaveda Śaunaka (`atharvaveda-saunaka`, CLI **`av`**). Dump maps: [`notes/kauthuma.md`](notes/kauthuma.md), [`notes/atharvaveda.md`](notes/atharvaveda.md).
+
 The Wikisource āraṇyaka is an **8-praśna** recension: Śikṣāvallī is praśna 5 (not printed TA 7); Brahmānanda and Bhṛgu are absent. The brāhmaṇa dump ends at **3.9**. Reader-facing maps and gaps: [`data/processed/taittiriya-aranyaka/README.md`](data/processed/taittiriya-aranyaka/README.md), [`data/processed/taittiriya-brahmana/README.md`](data/processed/taittiriya-brahmana/README.md). Ingest notes: [`notes/taittiriya.md`](notes/taittiriya.md).
 
 ```bash
@@ -110,7 +120,7 @@ We extract these three layers into structured Vyasa streams, enrich anukramani f
 | 3 Transform | `bun run transform:rv` | `data/processed/rigveda/content/**/*.vy` (local only) |
 | 4 Enrich | `bun run enrich:rv` | `annotations/anukramani/`, `vocabulary/{entities,meters}.vy` |
 | 5 Verify | `bun run verify:rv` | `data/audit/rigveda-segments-latest.txt` |
-| Pack | `bun run build:rv` / `build:aady` / `build:tts` / `build:tta` / `build:ttb` / `build:ttpr` | `sa_wikisource/dist/catalog.json`, `.vyview` files |
+| Pack | `bun run build:rv` / `build:aady` / `build:tts` / `build:tta` / `build:ttb` / `build:ttpr` / `build:sv` / `build:av` | `sa_wikisource/dist/catalog.json`, `.vyview` files |
 | Deploy | `bun run deploy` | GitHub Pages |
 
 Requires `REFERENCE_SNAPSHOTS` for enrich (see `notes/enrich-rv.md`). `patch:rv` is deprecated.
